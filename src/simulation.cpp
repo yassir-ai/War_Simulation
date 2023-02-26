@@ -16,48 +16,66 @@ Simulation::Simulation()
         {
             a[0].push_back( new Infanterie() );
             a[1].push_back( new Infanterie() );
-            ((Infanterie *) a[1][i])->type += 4;               //pour ditinguer entre les soldats des deux armees
+            ((Infanterie *) a[1][i])->incremId(4);               //pour ditinguer entre les soldats des deux armees
         }
         else if ( i < N_INFA + N_CAVA )
         {
             a[0].push_back( new Cavalerie() );
             a[1].push_back( new Cavalerie() );
-            ((Cavalerie *) a[1][i])->type += 4; 
+
+            ((Cavalerie *) a[1][i])->incremId(4); 
+            
+            
         }
         else if ( i < N_INFA + N_CAVA + N_CHAR)
         {
             a[0].push_back( new Char() );
             a[1].push_back( new Char() );
-            ((Char *) a[1][i])->type += 4;             
+            ((Char *) a[1][i])->incremId(4);
+            
         }
         else 
         {
             a[0].push_back( new Force_Aerienne() );
             a[1].push_back( new Force_Aerienne() );
-            ((Force_Aerienne *) a[1][i])->type += 4; 
+            ((Force_Aerienne *) a[1][i])->incremId(4);       
         }
     }
+
+    for (int i = 0; i < TAILLE_C * TAILLE_T; i++)
+    {
+        for (int j = 0; j < TAILLE_C * TAILLE_T; j++)
+        {
+            Carte_Guerre[i][j] = nullptr;
+        }
+        
+    }
 }
+
 
 Armee Simulation::getA1()
 {
     return a[0];
 }
 
+
 Armee Simulation::getA2()
 {
     return a[1];
 }
+
 
 void Simulation::setA1(Armee a)
 {
     this->a[0] = a;
 }
 
+
 void Simulation::setA2(Armee a)
 {
     this->a[1] = a;
 }
+
 
 void Simulation::AfficherArmees()
 {
@@ -75,11 +93,10 @@ void Simulation::AfficherArmees()
 }
 
 
-
 void Simulation::DisperserArmee()
 {
     //initialisation des positions 
-    bool occupe[TAILLE_C * TAILLE_T][TAILLE_C * TAILLE_T] =  {false};   // false === 0
+    bool occupe[TAILLE_C * TAILLE_T][TAILLE_C * TAILLE_T] =  {false};   // false == 0
 
     //disperser armee1
 
@@ -100,24 +117,15 @@ void Simulation::DisperserArmee()
                 i = rand() % taille;
                 j = rand() % taille;
             }
-            carte[i/TAILLE_T][j/TAILLE_T].matrice[i%TAILLE_T][j%TAILLE_T] = a[k][compteur];  // soldat *
-            carte[i/TAILLE_T][j/TAILLE_T].InfluenceSoldat( *a[k][compteur] );
+            carte[i/TAILLE_T][j/TAILLE_T].matrice[i%TAILLE_T][j%TAILLE_T] = a[k][compteur];         // soldat *
+            carte[i/TAILLE_T][j/TAILLE_T].InfluenceSoldat( *a[k][compteur] );                       // influence du terrain (meteo et topographie)
+            Carte_Guerre[i][j] = a[k][compteur];                                                    // placer le soldat dans la carte de guerre
             compteur++;        
             occupe[i][j] = true;
         }
 
         compteur = 0;      //pour l'autre armee
     }
-
-
-
-    //influence du meteo
-    
-
-
-
-
-
 }
 
 
@@ -142,6 +150,19 @@ Simulation::~Simulation()
 }
 
 
+void Simulation::Progression()
+{
+    int taille = TAILLE_C * TAILLE_T;
+
+    // remplissage de la carte temp
+    for (int i = 0; i < taille; i++)
+    {
+        for (int j = 0; j < taille; j++)
+        {
+            carte_etat[i][j] = Carte_Guerre[i][j];
+        }
+    }
+}
 
 
 void Simulation::AfficherCarte()
@@ -158,4 +179,194 @@ void Simulation::AfficherCarte()
             cmpt++;
         }
     }
+}
+
+
+void Simulation::supprimer_soldat(Soldat* sol_mort)
+{
+    int id = sol_mort->getId() / 4;   //recuperer numero de l'armée
+
+    auto it = find(a[id].begin(), a[id].end(), sol_mort); // Cherche l'élément dans le vecteur
+
+    if (it != a[id].end())                       // Si l'élément est trouvé
+    { 
+        a[id].erase(it);                         // Supprime l'élément du vecteur
+        delete sol_mort;                            // Libère la mémoire allouée pour l'élément
+    }
+}
+
+
+
+void Simulation::executer_tir(pair pos_soldat_cour)
+{
+    int taille = TAILLE_C * TAILLE_T;
+    Soldat * soldat_cour = carte_etat[pos_soldat_cour.first][pos_soldat_cour.second];
+    int type = soldat_cour->getType();
+    pair nv_positio = soldat_cour->Position_Tir(pos_soldat_cour);  //avoir la nouvelle position
+    int i = (nv_positio.first+taille)%taille;
+    int j = (nv_positio.second+taille)%taille;
+    Soldat * ennemi =  carte_etat[i][j];//recuperer l'ennemi à cet position (peut etre null)
+    int di, dj;
+
+    switch (type)
+    {
+        case 0:                 //Infanterie
+            if (ennemi && !soldat_cour->est_Ami(*ennemi)) // si il esxiste un soldat et qui n'est pas ami avec sol_cour
+            {
+                ennemi->reduireHp( soldat_cour->tirer());
+
+                //virifier s'il est mort 
+                if (ennemi->estMort())
+                {
+                    Carte_Guerre[i][j] = nullptr;  // l'eliminer de la carte de guerre
+                    supprimer_soldat(ennemi);                                     //supprimer l'ennemi de l'armée
+                }
+            }
+            
+            break;
+
+        case 1:                // Cavalerie
+            if (ennemi && !soldat_cour->est_Ami(*ennemi)) // si il esxiste un soldat et qui n'est pas ami avec sol_cour
+            {
+                ennemi->reduireHp( soldat_cour->tirer());
+                //virifier s'il est mort 
+                if (ennemi->estMort())
+                {
+                    Carte_Guerre[i][j] = nullptr;  // l'eliminer de la carte de guerre
+                    supprimer_soldat(ennemi);                                     //supprimer l'ennemi de l'armée
+                }
+            }
+            
+            break;
+
+        case 2:
+            di = pos_soldat_cour.first - nv_positio.first;
+            dj = pos_soldat_cour.second - nv_positio.second;
+
+            if (di == 0)
+            {
+                for (int k = nv_positio.first - 1; k <= nv_positio.first + 1; k++)
+                {
+                    if (carte_etat[(k+taille)%taille][(nv_positio.second-dj+taille)%taille] && !soldat_cour->est_Ami(*carte_etat[(k+taille)%taille][(nv_positio.second-dj+taille)%taille])) // si il esxiste un soldat et qui n'est pas ami avec sol_cour
+                    {
+                        carte_etat[(k+taille)%taille][(nv_positio.second-dj+taille)%taille]->reduireHp( soldat_cour->tirer());
+                        //virifier s'il est mort 
+                        if (carte_etat[(k+taille)%taille][(nv_positio.second-dj+taille)%taille]->estMort())
+                        {
+                            Carte_Guerre[i][j] = nullptr;  // l'eliminer de la carte de guerre
+                            supprimer_soldat(carte_etat[(k+taille)%taille][(nv_positio.second-dj+taille)%taille]);                                     //supprimer l'ennemi de l'armée
+                        }
+                    }
+
+                    if (carte_etat[(k+taille)%taille][(nv_positio.second-2*dj+taille)%taille] && !soldat_cour->est_Ami(*carte_etat[(k+taille)%taille][(nv_positio.second-2*dj+taille)%taille])) // si il esxiste un soldat et qui n'est pas ami avec sol_cour
+                    {
+                        carte_etat[(k+taille)%taille][(nv_positio.second-2*dj+taille)%taille]->reduireHp( soldat_cour->tirer());
+
+                        if (carte_etat[(k+taille)%taille][(nv_positio.second-2*dj+taille)%taille]->estMort())
+                        {
+                            Carte_Guerre[i][j] = nullptr;  // l'eliminer de la carte de guerre
+                            supprimer_soldat(carte_etat[(k+taille)%taille][(nv_positio.second-2*dj+taille)%taille]);                                     //supprimer l'ennemi de l'armée
+                        }
+                    }
+                }
+            }
+            else
+            {
+                for (int k = nv_positio.second - 1; k <= nv_positio.second + 1; k++)
+                {
+                    if (carte_etat[(nv_positio.first-di+taille)%taille][(k+taille)%taille] && !soldat_cour->est_Ami(*carte_etat[(nv_positio.first-di+taille)%taille][(k+taille)%taille])) // si il esxiste un soldat et qui n'est pas ami avec sol_cour
+                    {
+                        carte_etat[(nv_positio.first-di+taille)%taille][(k+taille)%taille]->reduireHp( soldat_cour->tirer());
+
+                        if (carte_etat[(nv_positio.first-di+taille)%taille][(k+taille)%taille]->estMort())
+                        {
+                            Carte_Guerre[i][j] = nullptr;  // l'eliminer de la carte de guerre
+                            supprimer_soldat(carte_etat[(nv_positio.first-di+taille)%taille][(k+taille)%taille]);                                     //supprimer l'ennemi de l'armée
+                        }
+                    }
+
+                    if (carte_etat[(nv_positio.first-2*di+taille)%taille][(k+taille)%taille] && !soldat_cour->est_Ami(*carte_etat[(nv_positio.first-2*di+taille)%taille][(k+taille)%taille])) // si il esxiste un soldat et qui n'est pas ami avec sol_cour
+                    {
+                        carte_etat[(nv_positio.first-2*di+taille)%taille][(k+taille)%taille]->reduireHp( soldat_cour->tirer());
+
+                        if (carte_etat[(nv_positio.first-2*di+taille)%taille][(k+taille)%taille]->estMort())
+                        {
+                            Carte_Guerre[i][j] = nullptr;  // l'eliminer de la carte de guerre
+                            supprimer_soldat(carte_etat[(nv_positio.first-2*di+taille)%taille][(k+taille)%taille]);                                     //supprimer l'ennemi de l'armée
+                        }
+                    }
+                }
+            }
+
+            break;
+        
+        case 3:
+            for (int u = -1; u <= 1; u++)
+            {
+                for (int v = -1; v <= -1; v++)
+                {
+                    if (carte_etat[(pos_soldat_cour.first + u + taille) % taille ][(pos_soldat_cour.second + v + taille) % taille] && !soldat_cour->est_Ami(*carte_etat[(pos_soldat_cour.first + u + taille) % taille ][(pos_soldat_cour.second + v + taille) % taille]))
+                    {
+                        carte_etat[(pos_soldat_cour.first + u + taille) % taille ][(pos_soldat_cour.second + v + taille) % taille]->reduireHp( soldat_cour->tirer());
+
+                        if (carte_etat[(pos_soldat_cour.first + u + taille) % taille ][(pos_soldat_cour.second + v + taille) % taille]->estMort())
+                        {
+                            Carte_Guerre[i][j] = nullptr;  // l'eliminer de la carte de guerre
+                            supprimer_soldat(carte_etat[(pos_soldat_cour.first + u + taille) % taille ][(pos_soldat_cour.second + v + taille) % taille]);                                     //supprimer l'ennemi de l'armée
+                        }
+                    }
+                }
+                
+            }
+            
+
+            break;
+        default:
+            break;
+    }
+
+}
+
+
+void Simulation::episode()
+{
+    Soldat * soldat_cour = nullptr;
+    pair destination;                                     // de deplacemnt ou de tir
+    int taille = TAILLE_C * TAILLE_T;
+
+    for (int i = 0; i < taille; i++)
+    {
+        for (int j = 0; j < taille; j++)
+        {
+            soldat_cour = carte_etat[i][j];
+
+            if (soldat_cour)             //un soldat existe dans cette case
+            {
+                if (soldat_cour->decider())    //==1  -> bouger
+                {
+                    destination = soldat_cour->bouger(std::make_pair(i,j));           //reciperer la case de destination
+
+                    if (!Carte_Guerre[(destination.first + taille)%taille][(destination.second + taille)%taille])        // verifier si l'enplacement est vide
+                    {
+                        Carte_Guerre[destination.first][destination.second] = soldat_cour;
+                        Carte_Guerre[i][j] = nullptr;   // la case est vide maintenant
+                        
+                        // influence du nv terrain si le soldat change de terrain
+                        if (i / taille != (((destination.first + taille)%taille) / taille) || j / taille != (((destination.second + taille)%taille) / taille))
+                        {
+                            carte[((destination.first + taille)%taille) / taille][((destination.second + taille)%taille) / taille].InfluenceSoldat(*soldat_cour);
+                        }
+                    }
+                }
+                else    //==0  -> tirer
+                {
+                    executer_tir(std::make_pair(i,j));
+                }
+            }
+        }
+        
+    }
+    
+    Progression(); // actualisation de la carte d'etat
+
 }

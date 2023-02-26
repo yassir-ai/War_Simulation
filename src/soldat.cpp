@@ -1,5 +1,7 @@
 #include "soldat.hpp"
 
+
+
 Soldat::Soldat() 
 {}
 
@@ -23,6 +25,17 @@ int Soldat::getSpeed()
     return speed;
 }
 
+int Soldat::getId()
+{
+    return id;
+}
+
+
+void Soldat::setId(int nv_id)
+{
+    id = nv_id;
+}
+
 void Soldat::setHp(int hp)
 {
     this->hp = hp;
@@ -38,10 +51,12 @@ void Soldat::setPrecision(float precision)
     this->precision = precision;
 }
 
+
 void Soldat::setSpeed(int speed)
 {
     this->speed = speed;
 }
+
 
 int Soldat::tirer()
 {
@@ -54,6 +69,7 @@ int Soldat::tirer()
     return resultat;
 }
 
+
 void Soldat::reduireHp(int tir)
 {
     int random = rand() % 100;
@@ -62,12 +78,36 @@ void Soldat::reduireHp(int tir)
         hp -= tir;
 }
 
+
 void Soldat::AfficherSoldat()
 {
     cout << "HP : " << hp;
     cout << " STR : " << strength;
     cout << " PRC : " << precision;
     cout << " SPD : " << speed << endl;
+}
+
+
+void Soldat::incremId(int pas)
+{
+    id += pas;
+}
+
+
+int Soldat::decider() // 0 = tirer, 1 = bouger
+{
+    return rand() % 2;
+}
+
+
+bool Soldat::estMort()
+{
+    return (hp <= 0);
+}
+
+bool Soldat::est_Ami(Soldat& sol)
+{
+    return ( (this->getId() / 4) == (sol.getId() / 4) );
 }
 
 

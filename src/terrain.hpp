@@ -28,7 +28,7 @@ class Terrain
 protected:
 
     Topographie topo;
-    Meteo meteo;
+    Meteo  meteo;
 
 public:
 

@@ -11,9 +11,15 @@ int main(int, char**)
 
     //s.AffichageCarte2();
 
-    s.AfficherCarte();
+    //s.AfficherCarte();
 
-    s.AfficherArmees();
+    //s.AfficherArmees();
+
+
+    s.Progression();
+
+    s.episode();
+
 
     return 0;
 }

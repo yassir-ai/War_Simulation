@@ -46,7 +46,8 @@ void Terrain::AfficherTerrain()
     {
         for (int j = 0; j < TAILLE_T; j++)
         {
-            if ( matrice[i][j] != nullptr ) cout << matrice[i][j]->TypeSoldat() << " " ;
+            // if ( matrice[i][j] != nullptr ) cout << matrice[i][j]->getId() << " " ;
+            if ( matrice[i][j] != nullptr )  matrice[i][j]->AfficherSoldat()  ;
         }
         cout << endl;
     }
@@ -56,13 +57,13 @@ void Terrain::AfficherTerrain()
 void Terrain::InfluenceSoldat( Soldat& soldat )
 {
     float taux = meteo * soldat.getPrecision() * 0.25;
-    int taux_speed = topo * soldat.TypeSoldat();
+    int taux_speed = topo * soldat.getType();
 
     float nv_precision = soldat.getPrecision() - taux;
     int nv_speed = soldat.getSpeed() - taux_speed;
 
     soldat.setPrecision(nv_precision);
-    soldat.setSpeed(nv_speed);
+    if (soldat.getType() != Force_Aerienne::type) soldat.setSpeed(nv_speed); // les forces aerienne ne sont pas influence par la topographie (ils volent)
 }
 
 

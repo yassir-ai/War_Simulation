@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <ctime>
+#include <algorithm>
 #include "soldat.hpp"
 #include "terrain.hpp"
 
@@ -27,6 +28,10 @@ private:
 
     Terrain** carte;
 
+    Soldat * Carte_Guerre[TAILLE_T * TAILLE_C][TAILLE_T * TAILLE_C];
+
+    Soldat* carte_etat[TAILLE_T * TAILLE_C][TAILLE_T * TAILLE_C];
+
 public:
 
     Simulation();
@@ -41,7 +46,15 @@ public:
 
     void DisperserArmee();
 
+    void Progression();
+
     void AfficherCarte();
+
+    void supprimer_soldat(Soldat*);   //supprimer un soldat mort de l'armée
+
+    void executer_tir(pair);
+
+    void episode();
 
     ~Simulation();
 };
