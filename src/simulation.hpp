@@ -7,12 +7,21 @@
 #include "soldat.hpp"
 #include "terrain.hpp"
 
-const int TAILLE_A = 100;                //taille armee
+// const int TAILLE_A = 100;                //taille armee
+// const int TAILLE_C = 3;                 //racine de taille de la carte
+// const int N_INFA = 60;
+// const int N_CAVA = 20;
+// const int N_CHAR = 10;
+// const int N_AERI = 10;
+
+
+
+const int TAILLE_A = 20;                //taille armee
 const int TAILLE_C = 3;                 //racine de taille de la carte
-const int N_INFA = 60;
-const int N_CAVA = 20;
-const int N_CHAR = 10;
-const int N_AERI = 10;
+const int N_INFA = 10;
+const int N_CAVA = 5;
+const int N_CHAR = 2;
+const int N_AERI = 3;
 
 using std::cout;
 using std::endl;
@@ -55,6 +64,10 @@ public:
     void executer_tir(pair);
 
     void episode();
+
+    void afficher_episode();
+
+    void simuler(int );
 
     ~Simulation();
 };

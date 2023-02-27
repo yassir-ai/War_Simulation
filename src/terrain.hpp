@@ -6,7 +6,7 @@
 #include "soldat.hpp"
 
 
-const int TAILLE_T = 6;
+const int TAILLE_T = 5;
 
 enum Meteo
 {

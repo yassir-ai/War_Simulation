@@ -32,7 +32,7 @@ void Infanterie::restituer()
 }
 
 
-pair Infanterie::bouger(pair position)
+pair Infanterie::bouger(pair position)   // se deplace avec un pas de 1
 {
     int x = rand() % 3;
     int y = rand() % 3;
@@ -43,7 +43,7 @@ pair Infanterie::bouger(pair position)
     return nv_position;
 }
 
-pair Infanterie::Position_Tir(pair position)
+pair Infanterie::Position_Tir(pair position)           // elle tue un seul soldat parmi les 8 autour de lui 
 {
     int x = rand() % 3;
     int y = rand() % 3;

@@ -16,10 +16,11 @@ int main(int, char**)
     //s.AfficherArmees();
 
 
-    s.Progression();
+    // s.Progression();
 
-    s.episode();
+    // s.episode();
 
+    s.simuler(5);
 
     return 0;
 }
