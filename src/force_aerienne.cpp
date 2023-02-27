@@ -1,42 +1,49 @@
-/**  @file     force_aerienne.cpp    
- * @brief      Implements the force_aerienne class                                                                                                                            
- * @author     Yassir, Achraf, Xuanzhe                                                                                                        
- * @version    1.0.0.1                                                
- * @date       2023.01.31                                                                                
- * @copyright  Copyright (c)
- *****************************************************************
- * @attention
- * Development environment: Windows
- * @par Modification log:
- * <table>
- * <tr><th>Date        <th>Version  <th>Author    <th>Description
- * <tr><td>2023/01/31  <td>1.0      <td>Achraf    <td>Creating the initial version
- * <tr><td>2023/02/10  <td>2.0      <td>Xuanzhe   <td>Solution (membre hérité non autoriséC/C++(298)) and the change of the virtual method
- * </table>
- ******************************************************************
- */  
 #include "soldat.hpp"
 
-/**
- * @brief Constructor for the Air Force class.
- * 
- * Initializes the health, strength, precision, and speed values.
- */
+const int Force_Aerienne::type = 3;
+
 Force_Aerienne::Force_Aerienne()
 {
     this->hp = 400;
     this->strength = 300;
     this->precision = 0.9;
     this->speed = 90;
+    id = type;
 }
 
-/**
- * @brief Displays the details of a  Air Force object
- * 
- * Displays the hit points, strength, precision, and speed of a Char object.
- */
-void Force_Aerienne::Afficher()
+
+void Force_Aerienne::AfficherSoldat()
 {
     cout << "Force aerienne :" << endl;
-    Soldat::Afficher();
+    Soldat::AfficherSoldat();
+}
+
+
+int Force_Aerienne::getType()
+{
+    return type;
+}
+
+
+void Force_Aerienne::restituer()
+{
+    this->precision = 0.9;
+    this->speed = 90;
+}
+
+
+pair Force_Aerienne::bouger(pair position)                // se deplace avec un pas de 5
+{
+    int x = rand() % 3;
+    int y = rand() % 3;
+    x--;
+    y--;
+    pair nv_position = std::make_pair(position.first + 5*x, position.second + 5*y);
+
+    return nv_position;
+}
+
+pair Force_Aerienne::Position_Tir(pair position)   //elle tue 8 personne autour de lui
+{
+    return position;
 }

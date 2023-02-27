@@ -1,43 +1,62 @@
-/**  @file     char.cpp    
- * @brief Implements the char class                                                                                                                            
- * @author     Yassir, Achraf, Xuanzhe                                                                                                        
- * @version    1.0.0.1                                                
- * @date       2023.01.31                                                                                
- * @copyright  Copyright (c)
- *****************************************************************
- * @attention
- * Development environment: Windows
- * @par Modification log:
- * <table>
- * <tr><th>Date        <th>Version  <th>Author    <th>Description
- * <tr><td>2023/01/31  <td>1.0      <td>Achraf    <td>Creating the initial version
- * <tr><td>2023/02/10  <td>2.0      <td>Xuanzhe   <td>Solution (membre hérité non autoriséC/C++(298)) and the change of the virtual method
- * </table>
- ******************************************************************
- */     
 #include "soldat.hpp"
 
-/**
- * @brief Constructor for the Char class
- * 
- * Initializes the Char object with default values.
- */
+const int Char::type = 2;
+
 Char::Char()
 {
     this->hp = 500;
     this->strength = 200;
     this->precision = 0.8;
     this->speed = 10;
+    id = type;
+}
+
+void Char::AfficherSoldat() 
+{
+    cout << "Char :" << endl;
+    Soldat::AfficherSoldat();
 }
 
 
-/**
- * @brief Displays the details of a Char object
- * 
- * Displays the hit points, strength, precision, and speed of a Char object.
- */
-void Char::Afficher()
+int Char::getType()
 {
-    cout << "Char :" << endl;
-    Soldat::Afficher();
+    return type;
+}
+
+
+void Char::restituer()
+{
+    this->precision = 0.8;
+    this->speed = 10;
+}
+
+
+pair Char::bouger(pair position)                  // se deplace avec un pas de 2
+{ 
+    int x = rand() % 3;
+    int y = rand() % 3;
+    x--;
+    y--;
+    pair nv_position = std::make_pair(position.first + 2*x, position.second + 2*x);
+
+    return nv_position;
+}
+
+pair Char::Position_Tir(pair position)        // il choisit une direction parmi 4 dir, puis elle tue 2 ligne(oucolomnes) de 6 personne
+{
+    int x, y;
+    int choix = rand() % 2;
+    if (choix) // 1 : x==0
+    {
+        x = 0;
+        y = (rand()%2)? 1 : -1;
+    }
+    else // 0   : y==0 
+    {
+        y = 0;
+        x = (rand()%2)? 1 : -1;
+    }
+    pair nv_position = std::make_pair(position.first + x, position.second + y);
+
+    return nv_position;
 }

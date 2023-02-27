@@ -1,96 +1,79 @@
-/**  @file     simulation.hpp                                                                                                                                
- * @author     Yassir, Achraf, Xuanzhe                                                                                                        
- * @version    1.0.0.1                                                
- * @date       2023.01.31                                                                                
- * @copyright  Copyright (c)
- *****************************************************************
- * @attention
- * Development environment: Windows
- * @par Modification log:
- * <table>
- * <tr><th>Date        <th>Version  <th>Author    <th>Description
- * <tr><td>2023/01/31  <td>1.0      <td>Achraf    <td>Creating the initial version(Array and vector selection needs to be discussed)
- * <tr><td>2023/02/10  <td>2.0      <td>Xuanzhe   <td>modification of cart(impossible d'assigner une valeur de type "Terrain (*)[3]" à une entité de type "Terrain **")(Still need to discuss)
- * </table>
- ******************************************************************
- */ 
 #ifndef SIMULATION__H
 #define SIMULATION__H
 
 #include <iostream>
 #include <ctime>
+#include <algorithm>
 #include "soldat.hpp"
 #include "terrain.hpp"
 
-const int TAILLE_A = 100;
-const int TAILLE_T = 3;
+const int TAILLE_A = 162;                //taille armee
+const int TAILLE_C = 3;                 //racine de taille de la carte
+const int N_INFA = 80;
+const int N_CAVA = 42;
+const int N_CHAR = 30;
+const int N_AERI = 10;
+
+#define BLE     "\x1b[44m"
+#define INIT    "\x1b[0m"
+#define RED     "\x1b[31m"
+#define RED2	"\x1b[41;5;1m"
+
+
+
+// const int TAILLE_A = 20;                //taille armee
+// const int TAILLE_C = 3;                 //racine de taille de la carte
+// const int N_INFA = 10;
+// const int N_CAVA = 5;
+// const int N_CHAR = 2;
+// const int N_AERI = 3;
 
 using std::cout;
 using std::endl;
 
+typedef std::vector<Soldat *> Armee;
 
-/**
- * @brief The Simulation class represents a simulation of two armies fighting on a terrain.
- *
- * The simulation consists of two armies and a terrain, and provides methods for initializing the
- * armies and the terrain, displaying the armies, and running the simulation.
- */
 class Simulation
 {
+
 private:
-    Armee a1;  ///< The first army.
-    Armee a2;  ///< The second army.
-    Terrain* carte[TAILLE_A];   ///< The terrain.
+
+    Armee a[2];
+
+    Terrain** carte;
+
+    Soldat * Carte_Guerre[TAILLE_T * TAILLE_C][TAILLE_T * TAILLE_C];
+
+    Soldat* carte_etat[TAILLE_T * TAILLE_C][TAILLE_T * TAILLE_C];
 
 public:
-    /**
-     * @brief Constructs a new Simulation object.
-     *
-     * This constructor initializes the armies and the terrain for the simulation.
-     */
+
     Simulation();
     
-    /**
-     * @brief Gets the first army.
-     *
-     * @return The first army.
-     */
     Armee getA1();
-
-    /**
-     * @brief Gets the second army.
-     *
-     * @return The second army.
-     */
     Armee getA2();
 
-
-    /**
-     * @brief Sets the first army.
-     *
-     * @param a1 The new value for the first army.
-     */
     void setA1(Armee );
-
-    
-    /**
-     * @brief Sets the second army.
-     *
-     * @param a2 The new value for the second army.
-     */
     void setA2(Armee );
 
-
-    /**
-     * @brief Displays the armies in the simulation.
-     */
     void AfficherArmees();
-    
-    /**
-     * @brief Destroys the Simulation object.
-     *
-     * This destructor frees the memory used by the terrain.
-     */
+
+    void DisperserArmee();
+
+    void Progression();
+
+    void AfficherCarte();
+
+    void supprimer_soldat(Soldat*);   //supprimer un soldat mort de l'armée
+
+    void executer_tir(pair);
+
+    void episode();
+
+    void afficher_episode();
+
+    void simuler(int );
+
     ~Simulation();
 };
 
