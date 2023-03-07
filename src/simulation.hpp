@@ -6,6 +6,7 @@
 #include <algorithm>
 #include "soldat.hpp"
 #include "terrain.hpp"
+#include <SDL2/SDL.h>
 
 const int TAILLE_A = 162;                //taille armee
 const int TAILLE_C = 3;                 //racine de taille de la carte
@@ -72,7 +73,9 @@ public:
 
     void afficher_episode();
 
-    void simuler(int );
+    void simuler(int , SDL_Renderer*);
+
+    void SDL_display(SDL_Renderer* );
 
     ~Simulation();
 };

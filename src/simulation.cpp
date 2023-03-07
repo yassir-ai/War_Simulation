@@ -423,21 +423,84 @@ void Simulation::afficher_episode()
 }
 
 
-void Simulation::simuler(int tour)
+void Simulation::simuler(int tour, SDL_Renderer* render)
 {
     Progression();
     int tmp = 0;
 
-    while (tmp<tour)
-    {
-        cout << "TOUR " << tmp++ << endl;
-        afficher_episode();
-        episode();
+    bool play = false;
+    bool pause = false;
+    SDL_Event event;
+
+    while( !play && tmp<tour)
+    {    
+        while(SDL_PollEvent(&event))
+        {
+          switch(event.type)
+          {
+            case SDL_QUIT:                                     //fermeture du fenetre 
+                play = true;
+                break;
+            case SDL_KEYDOWN:
+                if (event.key.keysym.sym == SDLK_SPACE)
+                {
+                    pause = !pause;
+                }
+                break;
+            default:
+                break;
+          }
+        }
+
+        while (!pause)
+        {
+            cout << "TOUR " << tmp++ << endl;
+            afficher_episode();
+            SDL_display(render);
+            episode();
+        }
     }
+}
 
 
+void Simulation::SDL_display(SDL_Renderer* render)
+{
+	SDL_Rect rectangle = { 0, 0, 20, 20 };
+	int i = 0, j = 0;
 
+	while (j < TAILLE_C * TAILLE_T && rectangle.x + rectangle.w <= TAILLE_C * TAILLE_T * 20)
+	{
+		while (i < TAILLE_C * TAILLE_T && rectangle.y <= TAILLE_C * TAILLE_T * 20)
+		{
+			if (carte_etat[i][j])
+			{
+                if (carte_etat[i][j]->getId() < 4)
+                {
+				    if (SDL_SetRenderDrawColor(render, 0, 0, 255, 255) != 0) std::cerr << "erreur";
+                
+                }
+                else
+                {
+				    if (SDL_SetRenderDrawColor(render, 255, 0, 0, 255) != 0) std::cerr << "erreur";
+                    
+                }
+				if (SDL_RenderDrawRect(render, &rectangle) != 0) std::cerr << "erreur";
+				SDL_RenderFillRect(render, &rectangle);
+			}
 
+			rectangle.y = rectangle.y + rectangle.h;
+			i++;
+		}
+		rectangle.y = 0;
 
+		rectangle.x = rectangle.x + rectangle.w;
+		j++;
+		i = 0;
+	}
 
+	SDL_RenderPresent(render);
+	SDL_Delay(1000);
+
+	if (SDL_SetRenderDrawColor(render, 0, 0, 0, 255) != 0) std::cerr << "erreur";
+	SDL_RenderClear(render);
 }
