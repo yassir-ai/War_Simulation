@@ -1,0 +1,9 @@
+<map id="Simulation::DisperserArmee" name="Simulation::DisperserArmee">
+<area shape="rect" id="node1" title="Random distribution of two armies, that is, the initialization of two armies on the map...." alt="" coords="5,104,189,129"/>
+<area shape="rect" id="node2" href="$class_terrain.html#aa3c1aa4b30a6eb89877029f13a470ccc" title="Modifie les caractéristiques d&#39;un soldat en fonction de la météo et de la topographie." alt="" coords="237,104,395,129"/>
+<area shape="rect" id="node3" href="$class_soldat.html#aaecb8b8124823153f44000cd0e11a1c3" title="Get the soldier&#39;s precision." alt="" coords="443,5,581,31"/>
+<area shape="rect" id="node4" href="$class_soldat.html#afed359e67f9f9cd84de69aabe9c5dde3" title="Get the soldier&#39;s speed." alt="" coords="451,55,573,80"/>
+<area shape="rect" id="node5" href="$class_soldat.html#afcd7882dbc493943c86f2f5eef31628b" title="Which type of soldier is returned." alt="" coords="455,104,569,129"/>
+<area shape="rect" id="node6" href="$class_soldat.html#a97daea0685c409a94ce94ca9f339c874" title="Set the soldier&#39;s precision." alt="" coords="443,153,581,179"/>
+<area shape="rect" id="node7" href="$class_soldat.html#ad162b5f88c4eb09a6ff9e3f8c765908c" title="Set the soldier&#39;s speed." alt="" coords="451,203,573,228"/>
+</map>

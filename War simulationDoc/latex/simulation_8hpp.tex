@@ -1,0 +1,136 @@
+\hypertarget{simulation_8hpp}{}\doxysection{D\+:/\+War\+\_\+\+Simulation2/\+War\+\_\+\+Simulation/src/simulation.hpp File Reference}
+\label{simulation_8hpp}\index{D:/War\_Simulation2/War\_Simulation/src/simulation.hpp@{D:/War\_Simulation2/War\_Simulation/src/simulation.hpp}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$ctime$>$}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include \char`\"{}soldat.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}terrain.\+hpp\char`\"{}}\newline
+Include dependency graph for simulation.\+hpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{simulation_8hpp__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=308pt]{simulation_8hpp__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_simulation}{Simulation}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef std\+::vector$<$ \mbox{\hyperlink{class_soldat}{Soldat}} $\ast$ $>$ \mbox{\hyperlink{simulation_8hpp_aca840af1bcb3ea0d8ff54ccebd639aa5}{Armee}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const int \mbox{\hyperlink{simulation_8hpp_a57f0c7fd78bff8692a9bcc0bac8b1ed0}{TAILLE\+\_\+A}} = 20
+\item 
+const int \mbox{\hyperlink{simulation_8hpp_a35ab942ed526bf5546586fe8ffff9daa}{TAILLE\+\_\+C}} = 3
+\item 
+const int \mbox{\hyperlink{simulation_8hpp_a2c9817c486f5c0516ce8571d92810da4}{N\+\_\+\+INFA}} = 10
+\item 
+const int \mbox{\hyperlink{simulation_8hpp_a1d1448edc8f5882bb30bc9c64af97d9a}{N\+\_\+\+CAVA}} = 5
+\item 
+const int \mbox{\hyperlink{simulation_8hpp_aed327ebaec9992233a63b780d941f38e}{N\+\_\+\+CHAR}} = 2
+\item 
+const int \mbox{\hyperlink{simulation_8hpp_a1826ed1728fe4c78d52e969bcad55c58}{N\+\_\+\+AERI}} = 3
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+~\newline
+ \begin{DoxyAuthor}{Author}
+Yassir, Achraf, Xuanzhe ~\newline
+ 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0.\+0.\+1 ~\newline
+ 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2023.\+01.\+31 ~\newline
+ 
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c)
+\end{DoxyCopyright}
+\begin{DoxyAttention}{Attention}
+Development environment\+: Windows 
+\end{DoxyAttention}
+\begin{DoxyParagraph}{Modification log\+:}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{4}{|X[-1]}|}
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ Date }&\cellcolor{\tableheadbgcolor}\textbf{ Version }&\cellcolor{\tableheadbgcolor}\textbf{ Author }&\cellcolor{\tableheadbgcolor}\textbf{ Description }\\\cline{1-4}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ Date }&\cellcolor{\tableheadbgcolor}\textbf{ Version }&\cellcolor{\tableheadbgcolor}\textbf{ Author }&\cellcolor{\tableheadbgcolor}\textbf{ Description }\\\cline{1-4}
+\endhead
+2023/01/31 &1.\+0 &Achraf &Creating the initial version(\+Array and vector selection needs to be discussed) \\\cline{1-4}
+2023/02/10 &2.\+0 &Xuanzhe &modification of cart(impossible d\textquotesingle{}assigner une valeur de type \char`\"{}\+Terrain ($\ast$)\mbox{[}3\mbox{]}\char`\"{} à une entité de type \char`\"{}\+Terrain $\ast$$\ast$\char`\"{})(Still need to discuss) \\\cline{1-4}
+2023/02/20 &3.\+0 &Yassir &Problem solving and optimization \\\cline{1-4}
+\end{longtabu}
+
+\end{DoxyParagraph}
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{simulation_8hpp_aca840af1bcb3ea0d8ff54ccebd639aa5}\label{simulation_8hpp_aca840af1bcb3ea0d8ff54ccebd639aa5}} 
+\index{simulation.hpp@{simulation.hpp}!Armee@{Armee}}
+\index{Armee@{Armee}!simulation.hpp@{simulation.hpp}}
+\doxysubsubsection{\texorpdfstring{Armee}{Armee}}
+{\footnotesize\ttfamily typedef std\+::vector$<$\mbox{\hyperlink{class_soldat}{Soldat}} $\ast$$>$ \mbox{\hyperlink{simulation_8hpp_aca840af1bcb3ea0d8ff54ccebd639aa5}{Armee}}}
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{simulation_8hpp_a1826ed1728fe4c78d52e969bcad55c58}\label{simulation_8hpp_a1826ed1728fe4c78d52e969bcad55c58}} 
+\index{simulation.hpp@{simulation.hpp}!N\_AERI@{N\_AERI}}
+\index{N\_AERI@{N\_AERI}!simulation.hpp@{simulation.hpp}}
+\doxysubsubsection{\texorpdfstring{N\_AERI}{N\_AERI}}
+{\footnotesize\ttfamily const int N\+\_\+\+AERI = 3}
+
+\mbox{\Hypertarget{simulation_8hpp_a1d1448edc8f5882bb30bc9c64af97d9a}\label{simulation_8hpp_a1d1448edc8f5882bb30bc9c64af97d9a}} 
+\index{simulation.hpp@{simulation.hpp}!N\_CAVA@{N\_CAVA}}
+\index{N\_CAVA@{N\_CAVA}!simulation.hpp@{simulation.hpp}}
+\doxysubsubsection{\texorpdfstring{N\_CAVA}{N\_CAVA}}
+{\footnotesize\ttfamily const int N\+\_\+\+CAVA = 5}
+
+\mbox{\Hypertarget{simulation_8hpp_aed327ebaec9992233a63b780d941f38e}\label{simulation_8hpp_aed327ebaec9992233a63b780d941f38e}} 
+\index{simulation.hpp@{simulation.hpp}!N\_CHAR@{N\_CHAR}}
+\index{N\_CHAR@{N\_CHAR}!simulation.hpp@{simulation.hpp}}
+\doxysubsubsection{\texorpdfstring{N\_CHAR}{N\_CHAR}}
+{\footnotesize\ttfamily const int N\+\_\+\+CHAR = 2}
+
+\mbox{\Hypertarget{simulation_8hpp_a2c9817c486f5c0516ce8571d92810da4}\label{simulation_8hpp_a2c9817c486f5c0516ce8571d92810da4}} 
+\index{simulation.hpp@{simulation.hpp}!N\_INFA@{N\_INFA}}
+\index{N\_INFA@{N\_INFA}!simulation.hpp@{simulation.hpp}}
+\doxysubsubsection{\texorpdfstring{N\_INFA}{N\_INFA}}
+{\footnotesize\ttfamily const int N\+\_\+\+INFA = 10}
+
+\mbox{\Hypertarget{simulation_8hpp_a57f0c7fd78bff8692a9bcc0bac8b1ed0}\label{simulation_8hpp_a57f0c7fd78bff8692a9bcc0bac8b1ed0}} 
+\index{simulation.hpp@{simulation.hpp}!TAILLE\_A@{TAILLE\_A}}
+\index{TAILLE\_A@{TAILLE\_A}!simulation.hpp@{simulation.hpp}}
+\doxysubsubsection{\texorpdfstring{TAILLE\_A}{TAILLE\_A}}
+{\footnotesize\ttfamily const int TAILLE\+\_\+A = 20}
+
+taille armee. \mbox{\Hypertarget{simulation_8hpp_a35ab942ed526bf5546586fe8ffff9daa}\label{simulation_8hpp_a35ab942ed526bf5546586fe8ffff9daa}} 
+\index{simulation.hpp@{simulation.hpp}!TAILLE\_C@{TAILLE\_C}}
+\index{TAILLE\_C@{TAILLE\_C}!simulation.hpp@{simulation.hpp}}
+\doxysubsubsection{\texorpdfstring{TAILLE\_C}{TAILLE\_C}}
+{\footnotesize\ttfamily const int TAILLE\+\_\+C = 3}
+
+racine de taille de la carte. 

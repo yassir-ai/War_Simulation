@@ -1,0 +1,4 @@
+<map id="Force_Aerienne::AfficherSoldat" name="Force_Aerienne::AfficherSoldat">
+<area shape="rect" id="node1" title="Displays the details of a Force_Aerienne object." alt="" coords="5,5,169,45"/>
+<area shape="rect" id="node2" href="$class_soldat.html#a0b57b0712eefcd9fcc8434216f41bf85" title="Print the soldier&#39;s attributes to the console." alt="" coords="217,13,364,38"/>
+</map>

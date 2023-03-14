@@ -1,0 +1,142 @@
+\hypertarget{terrain_8hpp}{}\doxysection{D\+:/\+War\+\_\+\+Simulation2/\+War\+\_\+\+Simulation/src/terrain.hpp File Reference}
+\label{terrain_8hpp}\index{D:/War\_Simulation2/War\_Simulation/src/terrain.hpp@{D:/War\_Simulation2/War\_Simulation/src/terrain.hpp}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$ctime$>$}\newline
+{\ttfamily \#include \char`\"{}soldat.\+hpp\char`\"{}}\newline
+Include dependency graph for terrain.\+hpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{terrain_8hpp__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{terrain_8hpp__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_terrain}{Terrain}}
+\begin{DoxyCompactList}\small\item\em A class representing a terrain object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{terrain_8hpp_a7694c329b6cd416415f4899e713fae9e}{Meteo}} \{ \mbox{\hyperlink{terrain_8hpp_a7694c329b6cd416415f4899e713fae9eaf1b15f3241914ed951e4a699d459b12f}{SOLEIL}}
+, \mbox{\hyperlink{terrain_8hpp_a7694c329b6cd416415f4899e713fae9ea0d89eb646f3cfb866323efe8d4a5ca94}{TEMPETE}}
+, \mbox{\hyperlink{terrain_8hpp_a7694c329b6cd416415f4899e713fae9ea40b547f7d33800240dc193402c07479a}{BROUILLARD}}
+ \}
+\begin{DoxyCompactList}\small\item\em An enumeration of possible weather conditions. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{terrain_8hpp_a41faeeb3db3a1b16965d601ccd1c2fe3}{Topographie}} \{ \mbox{\hyperlink{terrain_8hpp_a41faeeb3db3a1b16965d601ccd1c2fe3ad250e1abb10e687273cde2c9fc965f1d}{PLAINE}}
+, \mbox{\hyperlink{terrain_8hpp_a41faeeb3db3a1b16965d601ccd1c2fe3aa4f0cd847a9165e32d68c2256505686e}{FORET}}
+, \mbox{\hyperlink{terrain_8hpp_a41faeeb3db3a1b16965d601ccd1c2fe3a0cdaec7ae7cb694230a8541c8bea7fe7}{MONTAGNE}}
+ \}
+\begin{DoxyCompactList}\small\item\em An enumeration of possible types of terrain. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const int \mbox{\hyperlink{terrain_8hpp_aa9c607c5281f43b4cbb1e14405b6c687}{TAILLE\+\_\+T}} = 5
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+~\newline
+ \begin{DoxyAuthor}{Author}
+Yassir, Achraf, Xuanzhe ~\newline
+ 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0.\+0.\+1 ~\newline
+ 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2023.\+01.\+31 ~\newline
+ 
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c)
+\end{DoxyCopyright}
+\begin{DoxyAttention}{Attention}
+Development environment\+: Windows 
+\end{DoxyAttention}
+\begin{DoxyParagraph}{Modification log\+:}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{4}{|X[-1]}|}
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ Date }&\cellcolor{\tableheadbgcolor}\textbf{ Version }&\cellcolor{\tableheadbgcolor}\textbf{ Author }&\cellcolor{\tableheadbgcolor}\textbf{ Description }\\\cline{1-4}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ Date }&\cellcolor{\tableheadbgcolor}\textbf{ Version }&\cellcolor{\tableheadbgcolor}\textbf{ Author }&\cellcolor{\tableheadbgcolor}\textbf{ Description }\\\cline{1-4}
+\endhead
+2023/01/31 &1.\+0 &Achraf &Creating the initial version \\\cline{1-4}
+2023/02/20 &3.\+0 &Yassir &Problem solving and optimization \\\cline{1-4}
+\end{longtabu}
+
+\end{DoxyParagraph}
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{terrain_8hpp_a7694c329b6cd416415f4899e713fae9e}\label{terrain_8hpp_a7694c329b6cd416415f4899e713fae9e}} 
+\index{terrain.hpp@{terrain.hpp}!Meteo@{Meteo}}
+\index{Meteo@{Meteo}!terrain.hpp@{terrain.hpp}}
+\doxysubsubsection{\texorpdfstring{Meteo}{Meteo}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{terrain_8hpp_a7694c329b6cd416415f4899e713fae9e}{Meteo}}}
+
+
+
+An enumeration of possible weather conditions. 
+
+This enumeration represents three possible weather conditions\+: storm, sunshine, and fog. \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SOLEIL@{SOLEIL}!terrain.hpp@{terrain.hpp}}\index{terrain.hpp@{terrain.hpp}!SOLEIL@{SOLEIL}}}\mbox{\Hypertarget{terrain_8hpp_a7694c329b6cd416415f4899e713fae9eaf1b15f3241914ed951e4a699d459b12f}\label{terrain_8hpp_a7694c329b6cd416415f4899e713fae9eaf1b15f3241914ed951e4a699d459b12f}} 
+SOLEIL&Sunny weather. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TEMPETE@{TEMPETE}!terrain.hpp@{terrain.hpp}}\index{terrain.hpp@{terrain.hpp}!TEMPETE@{TEMPETE}}}\mbox{\Hypertarget{terrain_8hpp_a7694c329b6cd416415f4899e713fae9ea0d89eb646f3cfb866323efe8d4a5ca94}\label{terrain_8hpp_a7694c329b6cd416415f4899e713fae9ea0d89eb646f3cfb866323efe8d4a5ca94}} 
+TEMPETE&Stormy weather. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BROUILLARD@{BROUILLARD}!terrain.hpp@{terrain.hpp}}\index{terrain.hpp@{terrain.hpp}!BROUILLARD@{BROUILLARD}}}\mbox{\Hypertarget{terrain_8hpp_a7694c329b6cd416415f4899e713fae9ea40b547f7d33800240dc193402c07479a}\label{terrain_8hpp_a7694c329b6cd416415f4899e713fae9ea40b547f7d33800240dc193402c07479a}} 
+BROUILLARD&Foggy weather. \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{terrain_8hpp_a41faeeb3db3a1b16965d601ccd1c2fe3}\label{terrain_8hpp_a41faeeb3db3a1b16965d601ccd1c2fe3}} 
+\index{terrain.hpp@{terrain.hpp}!Topographie@{Topographie}}
+\index{Topographie@{Topographie}!terrain.hpp@{terrain.hpp}}
+\doxysubsubsection{\texorpdfstring{Topographie}{Topographie}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{terrain_8hpp_a41faeeb3db3a1b16965d601ccd1c2fe3}{Topographie}}}
+
+
+
+An enumeration of possible types of terrain. 
+
+This enumeration represents three possible types of terrain\+: plain, forest, and hill. \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PLAINE@{PLAINE}!terrain.hpp@{terrain.hpp}}\index{terrain.hpp@{terrain.hpp}!PLAINE@{PLAINE}}}\mbox{\Hypertarget{terrain_8hpp_a41faeeb3db3a1b16965d601ccd1c2fe3ad250e1abb10e687273cde2c9fc965f1d}\label{terrain_8hpp_a41faeeb3db3a1b16965d601ccd1c2fe3ad250e1abb10e687273cde2c9fc965f1d}} 
+PLAINE&A plain. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FORET@{FORET}!terrain.hpp@{terrain.hpp}}\index{terrain.hpp@{terrain.hpp}!FORET@{FORET}}}\mbox{\Hypertarget{terrain_8hpp_a41faeeb3db3a1b16965d601ccd1c2fe3aa4f0cd847a9165e32d68c2256505686e}\label{terrain_8hpp_a41faeeb3db3a1b16965d601ccd1c2fe3aa4f0cd847a9165e32d68c2256505686e}} 
+FORET&A forest. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MONTAGNE@{MONTAGNE}!terrain.hpp@{terrain.hpp}}\index{terrain.hpp@{terrain.hpp}!MONTAGNE@{MONTAGNE}}}\mbox{\Hypertarget{terrain_8hpp_a41faeeb3db3a1b16965d601ccd1c2fe3a0cdaec7ae7cb694230a8541c8bea7fe7}\label{terrain_8hpp_a41faeeb3db3a1b16965d601ccd1c2fe3a0cdaec7ae7cb694230a8541c8bea7fe7}} 
+MONTAGNE&A hill. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{terrain_8hpp_aa9c607c5281f43b4cbb1e14405b6c687}\label{terrain_8hpp_aa9c607c5281f43b4cbb1e14405b6c687}} 
+\index{terrain.hpp@{terrain.hpp}!TAILLE\_T@{TAILLE\_T}}
+\index{TAILLE\_T@{TAILLE\_T}!terrain.hpp@{terrain.hpp}}
+\doxysubsubsection{\texorpdfstring{TAILLE\_T}{TAILLE\_T}}
+{\footnotesize\ttfamily const int TAILLE\+\_\+T = 5}
+

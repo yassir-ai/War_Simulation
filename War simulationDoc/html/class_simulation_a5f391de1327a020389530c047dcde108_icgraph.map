@@ -1,0 +1,7 @@
+<map id="Simulation::supprimer_soldat" name="Simulation::supprimer_soldat">
+<area shape="rect" id="node1" title="Soldat Mort Effacer Soldat&lt;This function has been replaced with other functions&gt;" alt="" coords="676,5,824,45"/>
+<area shape="rect" id="node2" href="$class_simulation.html#a0243d4c9ee2b8c0ff45543c9ae6baaf4" title="Simulation of two armies sending war." alt="" coords="469,13,628,38"/>
+<area shape="rect" id="node3" href="$class_simulation.html#a38038379d768fdf31be58e738c7718c9" title="The move and attack simulation functions, along with the executer_tir(pair pos_soldat_cour) function,..." alt="" coords="285,13,421,38"/>
+<area shape="rect" id="node4" href="$class_simulation.html#a4b4978ee9c7eaa2c661e9676cf22b84e" title="Simulate each round of war or movement." alt="" coords="104,13,237,38"/>
+<area shape="rect" id="node5" href="$main_8cpp.html#a2c3f6775325c30275d11c6abee2db6a0" title=" " alt="" coords="5,13,56,38"/>
+</map>

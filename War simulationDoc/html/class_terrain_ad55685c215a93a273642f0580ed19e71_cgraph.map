@@ -1,0 +1,4 @@
+<map id="Terrain::AfficherTerrain" name="Terrain::AfficherTerrain">
+<area shape="rect" id="node1" title="Displays the terrain with the soldiers present on each square." alt="" coords="5,5,156,31"/>
+<area shape="rect" id="node2" href="$class_soldat.html#a0b57b0712eefcd9fcc8434216f41bf85" title="Print the soldier&#39;s attributes to the console." alt="" coords="204,5,351,31"/>
+</map>

@@ -1,0 +1,227 @@
+\hypertarget{class_terrain}{}\doxysection{Terrain Class Reference}
+\label{class_terrain}\index{Terrain@{Terrain}}
+
+
+A class representing a terrain object.  
+
+
+
+
+{\ttfamily \#include $<$terrain.\+hpp$>$}
+
+
+
+Collaboration diagram for Terrain\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=139pt]{class_terrain__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_terrain_a7160a06ab07a86ed97d23374405e8ef6}{Terrain}} ()
+\begin{DoxyCompactList}\small\item\em Constructs a new \mbox{\hyperlink{class_terrain}{Terrain}} object with a random topography and weather condition. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{terrain_8hpp_a41faeeb3db3a1b16965d601ccd1c2fe3}{Topographie}} \mbox{\hyperlink{class_terrain_aee4c74d5420d557844ef82da5cc03573}{get\+Topographie}} ()
+\begin{DoxyCompactList}\small\item\em Gets the topography of the terrain. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{terrain_8hpp_a7694c329b6cd416415f4899e713fae9e}{Meteo}} \mbox{\hyperlink{class_terrain_a8b580225872b75a2b4619225f95a1a19}{get\+Meteo}} ()
+\begin{DoxyCompactList}\small\item\em Gets the weather condition of the terrain. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_terrain_a4a8e096d33c2e0907a80a55d790af480}{set\+Topographie}} (\mbox{\hyperlink{terrain_8hpp_a41faeeb3db3a1b16965d601ccd1c2fe3}{Topographie}})
+\begin{DoxyCompactList}\small\item\em Sets the topography of the terrain. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_terrain_a655b4bdc10a360cc84a9bc12016905f4}{set\+Meteo}} (\mbox{\hyperlink{terrain_8hpp_a7694c329b6cd416415f4899e713fae9e}{Meteo}})
+\begin{DoxyCompactList}\small\item\em Sets the weather condition of the terrain. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_terrain_ad55685c215a93a273642f0580ed19e71}{Afficher\+Terrain}} ()
+\begin{DoxyCompactList}\small\item\em Displays the terrain with the soldiers present on each square. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_terrain_aa3c1aa4b30a6eb89877029f13a470ccc}{Influence\+Soldat}} (\mbox{\hyperlink{class_soldat}{Soldat}} \&)
+\begin{DoxyCompactList}\small\item\em Modifie les caractéristiques d\textquotesingle{}un soldat en fonction de la météo et de la topographie. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_soldat}{Soldat}} $\ast$ \mbox{\hyperlink{class_terrain_accb27bd87649ad9a2878feb7fd61a99d}{matrice}} \mbox{[}\mbox{\hyperlink{terrain_8hpp_aa9c607c5281f43b4cbb1e14405b6c687}{TAILLE\+\_\+T}}\mbox{]}\mbox{[}\mbox{\hyperlink{terrain_8hpp_aa9c607c5281f43b4cbb1e14405b6c687}{TAILLE\+\_\+T}}\mbox{]}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{terrain_8hpp_a41faeeb3db3a1b16965d601ccd1c2fe3}{Topographie}} \mbox{\hyperlink{class_terrain_a71dad848bcb0ab43a1dd976ad9ec4295}{topo}}
+\item 
+\mbox{\hyperlink{terrain_8hpp_a7694c329b6cd416415f4899e713fae9e}{Meteo}} \mbox{\hyperlink{class_terrain_a9e4cf8f2adf6a55ca74aa7fbe89c8297}{meteo}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A class representing a terrain object. 
+
+This class represents a terrain object with a specific topography and weather condition. It provides methods to get and set the topography and weather condition of the terrain. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_terrain_a7160a06ab07a86ed97d23374405e8ef6}\label{class_terrain_a7160a06ab07a86ed97d23374405e8ef6}} 
+\index{Terrain@{Terrain}!Terrain@{Terrain}}
+\index{Terrain@{Terrain}!Terrain@{Terrain}}
+\doxysubsubsection{\texorpdfstring{Terrain()}{Terrain()}}
+{\footnotesize\ttfamily Terrain\+::\+Terrain (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructs a new \mbox{\hyperlink{class_terrain}{Terrain}} object with a random topography and weather condition. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_terrain_ad55685c215a93a273642f0580ed19e71}\label{class_terrain_ad55685c215a93a273642f0580ed19e71}} 
+\index{Terrain@{Terrain}!AfficherTerrain@{AfficherTerrain}}
+\index{AfficherTerrain@{AfficherTerrain}!Terrain@{Terrain}}
+\doxysubsubsection{\texorpdfstring{AfficherTerrain()}{AfficherTerrain()}}
+{\footnotesize\ttfamily void Terrain\+::\+Afficher\+Terrain (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Displays the terrain with the soldiers present on each square. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=339pt]{class_terrain_ad55685c215a93a273642f0580ed19e71_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_terrain_ad55685c215a93a273642f0580ed19e71_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_terrain_a8b580225872b75a2b4619225f95a1a19}\label{class_terrain_a8b580225872b75a2b4619225f95a1a19}} 
+\index{Terrain@{Terrain}!getMeteo@{getMeteo}}
+\index{getMeteo@{getMeteo}!Terrain@{Terrain}}
+\doxysubsubsection{\texorpdfstring{getMeteo()}{getMeteo()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{terrain_8hpp_a7694c329b6cd416415f4899e713fae9e}{Meteo}} Terrain\+::get\+Meteo (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the weather condition of the terrain. 
+
+\begin{DoxyReturn}{Returns}
+The weather condition of the terrain 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=332pt]{class_terrain_a8b580225872b75a2b4619225f95a1a19_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_terrain_aee4c74d5420d557844ef82da5cc03573}\label{class_terrain_aee4c74d5420d557844ef82da5cc03573}} 
+\index{Terrain@{Terrain}!getTopographie@{getTopographie}}
+\index{getTopographie@{getTopographie}!Terrain@{Terrain}}
+\doxysubsubsection{\texorpdfstring{getTopographie()}{getTopographie()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{terrain_8hpp_a41faeeb3db3a1b16965d601ccd1c2fe3}{Topographie}} Terrain\+::get\+Topographie (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the topography of the terrain. 
+
+\begin{DoxyReturn}{Returns}
+The topography of the terrain 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_terrain_aee4c74d5420d557844ef82da5cc03573_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_terrain_aa3c1aa4b30a6eb89877029f13a470ccc}\label{class_terrain_aa3c1aa4b30a6eb89877029f13a470ccc}} 
+\index{Terrain@{Terrain}!InfluenceSoldat@{InfluenceSoldat}}
+\index{InfluenceSoldat@{InfluenceSoldat}!Terrain@{Terrain}}
+\doxysubsubsection{\texorpdfstring{InfluenceSoldat()}{InfluenceSoldat()}}
+{\footnotesize\ttfamily void Terrain\+::\+Influence\+Soldat (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_soldat}{Soldat}} \&}]{soldat }\end{DoxyParamCaption})}
+
+
+
+Modifie les caractéristiques d\textquotesingle{}un soldat en fonction de la météo et de la topographie. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em soldat} & \mbox{\hyperlink{class_soldat}{Soldat}} dont les caractéristiques sont modifiées. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=338pt]{class_terrain_aa3c1aa4b30a6eb89877029f13a470ccc_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_terrain_aa3c1aa4b30a6eb89877029f13a470ccc_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_terrain_a655b4bdc10a360cc84a9bc12016905f4}\label{class_terrain_a655b4bdc10a360cc84a9bc12016905f4}} 
+\index{Terrain@{Terrain}!setMeteo@{setMeteo}}
+\index{setMeteo@{setMeteo}!Terrain@{Terrain}}
+\doxysubsubsection{\texorpdfstring{setMeteo()}{setMeteo()}}
+{\footnotesize\ttfamily void Terrain\+::set\+Meteo (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{terrain_8hpp_a7694c329b6cd416415f4899e713fae9e}{Meteo}}}]{meteo }\end{DoxyParamCaption})}
+
+
+
+Sets the weather condition of the terrain. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em meteo} & The weather condition to set \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_terrain_a4a8e096d33c2e0907a80a55d790af480}\label{class_terrain_a4a8e096d33c2e0907a80a55d790af480}} 
+\index{Terrain@{Terrain}!setTopographie@{setTopographie}}
+\index{setTopographie@{setTopographie}!Terrain@{Terrain}}
+\doxysubsubsection{\texorpdfstring{setTopographie()}{setTopographie()}}
+{\footnotesize\ttfamily void Terrain\+::set\+Topographie (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{terrain_8hpp_a41faeeb3db3a1b16965d601ccd1c2fe3}{Topographie}}}]{topo }\end{DoxyParamCaption})}
+
+
+
+Sets the topography of the terrain. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em topo} & The topography to set \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_terrain_accb27bd87649ad9a2878feb7fd61a99d}\label{class_terrain_accb27bd87649ad9a2878feb7fd61a99d}} 
+\index{Terrain@{Terrain}!matrice@{matrice}}
+\index{matrice@{matrice}!Terrain@{Terrain}}
+\doxysubsubsection{\texorpdfstring{matrice}{matrice}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_soldat}{Soldat}}$\ast$ Terrain\+::matrice\mbox{[}\mbox{\hyperlink{terrain_8hpp_aa9c607c5281f43b4cbb1e14405b6c687}{TAILLE\+\_\+T}}\mbox{]}\mbox{[}\mbox{\hyperlink{terrain_8hpp_aa9c607c5281f43b4cbb1e14405b6c687}{TAILLE\+\_\+T}}\mbox{]}}
+
+\mbox{\Hypertarget{class_terrain_a9e4cf8f2adf6a55ca74aa7fbe89c8297}\label{class_terrain_a9e4cf8f2adf6a55ca74aa7fbe89c8297}} 
+\index{Terrain@{Terrain}!meteo@{meteo}}
+\index{meteo@{meteo}!Terrain@{Terrain}}
+\doxysubsubsection{\texorpdfstring{meteo}{meteo}}
+{\footnotesize\ttfamily \mbox{\hyperlink{terrain_8hpp_a7694c329b6cd416415f4899e713fae9e}{Meteo}} Terrain\+::meteo\hspace{0.3cm}{\ttfamily [protected]}}
+
+The weather condition of the terrain. \mbox{\Hypertarget{class_terrain_a71dad848bcb0ab43a1dd976ad9ec4295}\label{class_terrain_a71dad848bcb0ab43a1dd976ad9ec4295}} 
+\index{Terrain@{Terrain}!topo@{topo}}
+\index{topo@{topo}!Terrain@{Terrain}}
+\doxysubsubsection{\texorpdfstring{topo}{topo}}
+{\footnotesize\ttfamily \mbox{\hyperlink{terrain_8hpp_a41faeeb3db3a1b16965d601ccd1c2fe3}{Topographie}} Terrain\+::topo\hspace{0.3cm}{\ttfamily [protected]}}
+
+The topography of the terrain. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+War\+\_\+\+Simulation2/\+War\+\_\+\+Simulation/src/\mbox{\hyperlink{terrain_8hpp}{terrain.\+hpp}}\item 
+D\+:/\+War\+\_\+\+Simulation2/\+War\+\_\+\+Simulation/src/\mbox{\hyperlink{terrain_8cpp}{terrain.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,4 @@
+<map id="Soldat::est_Ami" name="Soldat::est_Ami">
+<area shape="rect" id="node1" title="Determine if another soldier is a friendly or enemy soldier." alt="" coords="5,5,120,31"/>
+<area shape="rect" id="node2" href="$class_soldat.html#a4fe39abcf721e7385f795c6fb95e74ce" title="Get the soldier&#39;s ID." alt="" coords="168,5,263,31"/>
+</map>

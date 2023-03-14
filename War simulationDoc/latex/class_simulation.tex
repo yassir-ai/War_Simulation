@@ -1,0 +1,379 @@
+\hypertarget{class_simulation}{}\doxysection{Simulation Class Reference}
+\label{class_simulation}\index{Simulation@{Simulation}}
+
+
+{\ttfamily \#include $<$simulation.\+hpp$>$}
+
+
+
+Collaboration diagram for Simulation\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=211pt]{class_simulation__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_simulation_a5b224cc5b36bcc8eb29689aff223de41}{Simulation}} ()
+\begin{DoxyCompactList}\small\item\em Constructs a new \mbox{\hyperlink{class_simulation}{Simulation}} object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{simulation_8hpp_aca840af1bcb3ea0d8ff54ccebd639aa5}{Armee}} \mbox{\hyperlink{class_simulation_a7d385a632dcb97211f7750be4f1fb5d0}{get\+A1}} ()
+\begin{DoxyCompactList}\small\item\em Gets the first army. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{simulation_8hpp_aca840af1bcb3ea0d8ff54ccebd639aa5}{Armee}} \mbox{\hyperlink{class_simulation_a0d30c3b16ad3ee7fa162a560f2b08cc5}{get\+A2}} ()
+\begin{DoxyCompactList}\small\item\em Gets the second army. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_simulation_ae566251533f80dc3568f0088b72d19d3}{set\+A1}} (\mbox{\hyperlink{simulation_8hpp_aca840af1bcb3ea0d8ff54ccebd639aa5}{Armee}})
+\begin{DoxyCompactList}\small\item\em Sets the first army. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_simulation_a568cfce4350f86686b695172f378d2c1}{set\+A2}} (\mbox{\hyperlink{simulation_8hpp_aca840af1bcb3ea0d8ff54ccebd639aa5}{Armee}})
+\begin{DoxyCompactList}\small\item\em Sets the second army. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_simulation_a549f3063ccad86e1fc6c05807f842e13}{Afficher\+Armees}} ()
+\begin{DoxyCompactList}\small\item\em Displays the armies in the simulation. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_simulation_a5c5655ae743ed735a1c722df61bf336c}{Disperser\+Armee}} ()
+\begin{DoxyCompactList}\small\item\em Random distribution of two armies, that is, the initialization of two armies on the map. Include the effect of terrain on soldiers\textquotesingle{} attributes. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_simulation_a40b6f8d0e9b6c67d6335722311e19625}{Progression}} ()
+\begin{DoxyCompactList}\small\item\em Mise à jour de la carte simulée avec les deux armées. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_simulation_a45d5e9c27b6ab3f02d78a04f08e9e172}{Afficher\+Carte}} ()
+\begin{DoxyCompactList}\small\item\em Exportation des conditions météorologiques du terrain de la carte. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_simulation_a5f391de1327a020389530c047dcde108}{supprimer\+\_\+soldat}} (\mbox{\hyperlink{class_soldat}{Soldat}} $\ast$)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_soldat}{Soldat}} Mort Effacer Soldat$<$\+This function has been replaced with other functions$>$ \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_simulation_a0243d4c9ee2b8c0ff45543c9ae6baaf4}{executer\+\_\+tir}} (\mbox{\hyperlink{soldat_8hpp_a522a0f4194aa69fd77cceb80ff615234}{pair}})
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_simulation}{Simulation}} of two armies sending war. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_simulation_a38038379d768fdf31be58e738c7718c9}{episode}} ()
+\begin{DoxyCompactList}\small\item\em The move and attack simulation functions, along with the \mbox{\hyperlink{class_simulation_a0243d4c9ee2b8c0ff45543c9ae6baaf4}{executer\+\_\+tir(pair pos\+\_\+soldat\+\_\+cour)}} function, are the two main functions of this simulation. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_simulation_ade817554fca1d35eaa41dc712b871d3b}{afficher\+\_\+episode}} ()
+\begin{DoxyCompactList}\small\item\em Exporting army movements and the occurrence of war. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_simulation_a4b4978ee9c7eaa2c661e9676cf22b84e}{simuler}} (int)
+\begin{DoxyCompactList}\small\item\em Simulate each round of war or movement. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_simulation_a80fad3f57dfaf195a36f7bc49bc88279}{$\sim$\+Simulation}} ()
+\begin{DoxyCompactList}\small\item\em Destroys the \mbox{\hyperlink{class_simulation}{Simulation}} object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{simulation_8hpp_aca840af1bcb3ea0d8ff54ccebd639aa5}{Armee}} \mbox{\hyperlink{class_simulation_afb9bd6c7adc21c51b4b9c67a9933c284}{a}} \mbox{[}2\mbox{]}
+\item 
+\mbox{\hyperlink{class_terrain}{Terrain}} $\ast$$\ast$ \mbox{\hyperlink{class_simulation_a47ccf2dbcefbf6f6e6f7870a66fafa73}{carte}}
+\item 
+\mbox{\hyperlink{class_soldat}{Soldat}} $\ast$ \mbox{\hyperlink{class_simulation_afc0040782c89e1700dafe114ab71c5ad}{Carte\+\_\+\+Guerre}} \mbox{[}\mbox{\hyperlink{terrain_8hpp_aa9c607c5281f43b4cbb1e14405b6c687}{TAILLE\+\_\+T}} $\ast$\mbox{\hyperlink{simulation_8hpp_a35ab942ed526bf5546586fe8ffff9daa}{TAILLE\+\_\+C}}\mbox{]}\mbox{[}\mbox{\hyperlink{terrain_8hpp_aa9c607c5281f43b4cbb1e14405b6c687}{TAILLE\+\_\+T}} $\ast$\mbox{\hyperlink{simulation_8hpp_a35ab942ed526bf5546586fe8ffff9daa}{TAILLE\+\_\+C}}\mbox{]}
+\item 
+\mbox{\hyperlink{class_soldat}{Soldat}} $\ast$ \mbox{\hyperlink{class_simulation_ae862fb9bd9a9270ab637732166a4ffdf}{carte\+\_\+etat}} \mbox{[}\mbox{\hyperlink{terrain_8hpp_aa9c607c5281f43b4cbb1e14405b6c687}{TAILLE\+\_\+T}} $\ast$\mbox{\hyperlink{simulation_8hpp_a35ab942ed526bf5546586fe8ffff9daa}{TAILLE\+\_\+C}}\mbox{]}\mbox{[}\mbox{\hyperlink{terrain_8hpp_aa9c607c5281f43b4cbb1e14405b6c687}{TAILLE\+\_\+T}} $\ast$\mbox{\hyperlink{simulation_8hpp_a35ab942ed526bf5546586fe8ffff9daa}{TAILLE\+\_\+C}}\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_simulation_a5b224cc5b36bcc8eb29689aff223de41}\label{class_simulation_a5b224cc5b36bcc8eb29689aff223de41}} 
+\index{Simulation@{Simulation}!Simulation@{Simulation}}
+\index{Simulation@{Simulation}!Simulation@{Simulation}}
+\doxysubsubsection{\texorpdfstring{Simulation()}{Simulation()}}
+{\footnotesize\ttfamily Simulation\+::\+Simulation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructs a new \mbox{\hyperlink{class_simulation}{Simulation}} object. 
+
+This constructor initializes the armies and the terrain for the simulation. \mbox{\Hypertarget{class_simulation_a80fad3f57dfaf195a36f7bc49bc88279}\label{class_simulation_a80fad3f57dfaf195a36f7bc49bc88279}} 
+\index{Simulation@{Simulation}!````~Simulation@{$\sim$Simulation}}
+\index{````~Simulation@{$\sim$Simulation}!Simulation@{Simulation}}
+\doxysubsubsection{\texorpdfstring{$\sim$Simulation()}{~Simulation()}}
+{\footnotesize\ttfamily Simulation\+::$\sim$\+Simulation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destroys the \mbox{\hyperlink{class_simulation}{Simulation}} object. 
+
+This destructor frees the memory used by the terrain. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_simulation_ade817554fca1d35eaa41dc712b871d3b}\label{class_simulation_ade817554fca1d35eaa41dc712b871d3b}} 
+\index{Simulation@{Simulation}!afficher\_episode@{afficher\_episode}}
+\index{afficher\_episode@{afficher\_episode}!Simulation@{Simulation}}
+\doxysubsubsection{\texorpdfstring{afficher\_episode()}{afficher\_episode()}}
+{\footnotesize\ttfamily void Simulation\+::afficher\+\_\+episode (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Exporting army movements and the occurrence of war. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=286pt]{class_simulation_ade817554fca1d35eaa41dc712b871d3b_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_simulation_ade817554fca1d35eaa41dc712b871d3b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_simulation_a549f3063ccad86e1fc6c05807f842e13}\label{class_simulation_a549f3063ccad86e1fc6c05807f842e13}} 
+\index{Simulation@{Simulation}!AfficherArmees@{AfficherArmees}}
+\index{AfficherArmees@{AfficherArmees}!Simulation@{Simulation}}
+\doxysubsubsection{\texorpdfstring{AfficherArmees()}{AfficherArmees()}}
+{\footnotesize\ttfamily void Simulation\+::\+Afficher\+Armees (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Displays the armies in the simulation. 
+
+\mbox{\Hypertarget{class_simulation_a45d5e9c27b6ab3f02d78a04f08e9e172}\label{class_simulation_a45d5e9c27b6ab3f02d78a04f08e9e172}} 
+\index{Simulation@{Simulation}!AfficherCarte@{AfficherCarte}}
+\index{AfficherCarte@{AfficherCarte}!Simulation@{Simulation}}
+\doxysubsubsection{\texorpdfstring{AfficherCarte()}{AfficherCarte()}}
+{\footnotesize\ttfamily void Simulation\+::\+Afficher\+Carte (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Exportation des conditions météorologiques du terrain de la carte. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_simulation_a45d5e9c27b6ab3f02d78a04f08e9e172_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_simulation_a5c5655ae743ed735a1c722df61bf336c}\label{class_simulation_a5c5655ae743ed735a1c722df61bf336c}} 
+\index{Simulation@{Simulation}!DisperserArmee@{DisperserArmee}}
+\index{DisperserArmee@{DisperserArmee}!Simulation@{Simulation}}
+\doxysubsubsection{\texorpdfstring{DisperserArmee()}{DisperserArmee()}}
+{\footnotesize\ttfamily void Simulation\+::\+Disperser\+Armee (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Random distribution of two armies, that is, the initialization of two armies on the map. Include the effect of terrain on soldiers\textquotesingle{} attributes. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_simulation_a5c5655ae743ed735a1c722df61bf336c_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=292pt]{class_simulation_a5c5655ae743ed735a1c722df61bf336c_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_simulation_a38038379d768fdf31be58e738c7718c9}\label{class_simulation_a38038379d768fdf31be58e738c7718c9}} 
+\index{Simulation@{Simulation}!episode@{episode}}
+\index{episode@{episode}!Simulation@{Simulation}}
+\doxysubsubsection{\texorpdfstring{episode()}{episode()}}
+{\footnotesize\ttfamily void Simulation\+::episode (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+The move and attack simulation functions, along with the \mbox{\hyperlink{class_simulation_a0243d4c9ee2b8c0ff45543c9ae6baaf4}{executer\+\_\+tir(pair pos\+\_\+soldat\+\_\+cour)}} function, are the two main functions of this simulation. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_simulation_a38038379d768fdf31be58e738c7718c9_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_simulation_a38038379d768fdf31be58e738c7718c9_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_simulation_a0243d4c9ee2b8c0ff45543c9ae6baaf4}\label{class_simulation_a0243d4c9ee2b8c0ff45543c9ae6baaf4}} 
+\index{Simulation@{Simulation}!executer\_tir@{executer\_tir}}
+\index{executer\_tir@{executer\_tir}!Simulation@{Simulation}}
+\doxysubsubsection{\texorpdfstring{executer\_tir()}{executer\_tir()}}
+{\footnotesize\ttfamily void Simulation\+::executer\+\_\+tir (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{soldat_8hpp_a522a0f4194aa69fd77cceb80ff615234}{pair}}}]{pos\+\_\+soldat\+\_\+cour }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{class_simulation}{Simulation}} of two armies sending war. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pos\+\_\+soldat\+\_\+cour} & The location of the soldier being traversed \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_simulation_a0243d4c9ee2b8c0ff45543c9ae6baaf4_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_simulation_a0243d4c9ee2b8c0ff45543c9ae6baaf4_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_simulation_a7d385a632dcb97211f7750be4f1fb5d0}\label{class_simulation_a7d385a632dcb97211f7750be4f1fb5d0}} 
+\index{Simulation@{Simulation}!getA1@{getA1}}
+\index{getA1@{getA1}!Simulation@{Simulation}}
+\doxysubsubsection{\texorpdfstring{getA1()}{getA1()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{simulation_8hpp_aca840af1bcb3ea0d8ff54ccebd639aa5}{Armee}} Simulation\+::get\+A1 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the first army. 
+
+\begin{DoxyReturn}{Returns}
+The first army. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_simulation_a0d30c3b16ad3ee7fa162a560f2b08cc5}\label{class_simulation_a0d30c3b16ad3ee7fa162a560f2b08cc5}} 
+\index{Simulation@{Simulation}!getA2@{getA2}}
+\index{getA2@{getA2}!Simulation@{Simulation}}
+\doxysubsubsection{\texorpdfstring{getA2()}{getA2()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{simulation_8hpp_aca840af1bcb3ea0d8ff54ccebd639aa5}{Armee}} Simulation\+::get\+A2 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the second army. 
+
+\begin{DoxyReturn}{Returns}
+The second army. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_simulation_a40b6f8d0e9b6c67d6335722311e19625}\label{class_simulation_a40b6f8d0e9b6c67d6335722311e19625}} 
+\index{Simulation@{Simulation}!Progression@{Progression}}
+\index{Progression@{Progression}!Simulation@{Simulation}}
+\doxysubsubsection{\texorpdfstring{Progression()}{Progression()}}
+{\footnotesize\ttfamily void Simulation\+::\+Progression (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Mise à jour de la carte simulée avec les deux armées. 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_simulation_a40b6f8d0e9b6c67d6335722311e19625_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_simulation_ae566251533f80dc3568f0088b72d19d3}\label{class_simulation_ae566251533f80dc3568f0088b72d19d3}} 
+\index{Simulation@{Simulation}!setA1@{setA1}}
+\index{setA1@{setA1}!Simulation@{Simulation}}
+\doxysubsubsection{\texorpdfstring{setA1()}{setA1()}}
+{\footnotesize\ttfamily void Simulation\+::set\+A1 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{simulation_8hpp_aca840af1bcb3ea0d8ff54ccebd639aa5}{Armee}}}]{a }\end{DoxyParamCaption})}
+
+
+
+Sets the first army. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a1} & The new value for the first army. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_simulation_a568cfce4350f86686b695172f378d2c1}\label{class_simulation_a568cfce4350f86686b695172f378d2c1}} 
+\index{Simulation@{Simulation}!setA2@{setA2}}
+\index{setA2@{setA2}!Simulation@{Simulation}}
+\doxysubsubsection{\texorpdfstring{setA2()}{setA2()}}
+{\footnotesize\ttfamily void Simulation\+::set\+A2 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{simulation_8hpp_aca840af1bcb3ea0d8ff54ccebd639aa5}{Armee}}}]{a }\end{DoxyParamCaption})}
+
+
+
+Sets the second army. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a2} & The new value for the second army. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_simulation_a4b4978ee9c7eaa2c661e9676cf22b84e}\label{class_simulation_a4b4978ee9c7eaa2c661e9676cf22b84e}} 
+\index{Simulation@{Simulation}!simuler@{simuler}}
+\index{simuler@{simuler}!Simulation@{Simulation}}
+\doxysubsubsection{\texorpdfstring{simuler()}{simuler()}}
+{\footnotesize\ttfamily void Simulation\+::simuler (\begin{DoxyParamCaption}\item[{int}]{tour }\end{DoxyParamCaption})}
+
+
+
+Simulate each round of war or movement. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_simulation_a4b4978ee9c7eaa2c661e9676cf22b84e_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=254pt]{class_simulation_a4b4978ee9c7eaa2c661e9676cf22b84e_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_simulation_a5f391de1327a020389530c047dcde108}\label{class_simulation_a5f391de1327a020389530c047dcde108}} 
+\index{Simulation@{Simulation}!supprimer\_soldat@{supprimer\_soldat}}
+\index{supprimer\_soldat@{supprimer\_soldat}!Simulation@{Simulation}}
+\doxysubsubsection{\texorpdfstring{supprimer\_soldat()}{supprimer\_soldat()}}
+{\footnotesize\ttfamily void Simulation\+::supprimer\+\_\+soldat (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_soldat}{Soldat}} $\ast$}]{sol\+\_\+mort }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{class_soldat}{Soldat}} Mort Effacer Soldat$<$\+This function has been replaced with other functions$>$ 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sol\+\_\+mort} & Objets du soldat mort \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_simulation_a5f391de1327a020389530c047dcde108_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_simulation_afb9bd6c7adc21c51b4b9c67a9933c284}\label{class_simulation_afb9bd6c7adc21c51b4b9c67a9933c284}} 
+\index{Simulation@{Simulation}!a@{a}}
+\index{a@{a}!Simulation@{Simulation}}
+\doxysubsubsection{\texorpdfstring{a}{a}}
+{\footnotesize\ttfamily \mbox{\hyperlink{simulation_8hpp_aca840af1bcb3ea0d8ff54ccebd639aa5}{Armee}} Simulation\+::a\mbox{[}2\mbox{]}\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_simulation_a47ccf2dbcefbf6f6e6f7870a66fafa73}\label{class_simulation_a47ccf2dbcefbf6f6e6f7870a66fafa73}} 
+\index{Simulation@{Simulation}!carte@{carte}}
+\index{carte@{carte}!Simulation@{Simulation}}
+\doxysubsubsection{\texorpdfstring{carte}{carte}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_terrain}{Terrain}}$\ast$$\ast$ Simulation\+::carte\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_simulation_ae862fb9bd9a9270ab637732166a4ffdf}\label{class_simulation_ae862fb9bd9a9270ab637732166a4ffdf}} 
+\index{Simulation@{Simulation}!carte\_etat@{carte\_etat}}
+\index{carte\_etat@{carte\_etat}!Simulation@{Simulation}}
+\doxysubsubsection{\texorpdfstring{carte\_etat}{carte\_etat}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_soldat}{Soldat}}$\ast$ Simulation\+::carte\+\_\+etat\mbox{[}\mbox{\hyperlink{terrain_8hpp_aa9c607c5281f43b4cbb1e14405b6c687}{TAILLE\+\_\+T}} $\ast$\mbox{\hyperlink{simulation_8hpp_a35ab942ed526bf5546586fe8ffff9daa}{TAILLE\+\_\+C}}\mbox{]}\mbox{[}\mbox{\hyperlink{terrain_8hpp_aa9c607c5281f43b4cbb1e14405b6c687}{TAILLE\+\_\+T}} $\ast$\mbox{\hyperlink{simulation_8hpp_a35ab942ed526bf5546586fe8ffff9daa}{TAILLE\+\_\+C}}\mbox{]}\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_simulation_afc0040782c89e1700dafe114ab71c5ad}\label{class_simulation_afc0040782c89e1700dafe114ab71c5ad}} 
+\index{Simulation@{Simulation}!Carte\_Guerre@{Carte\_Guerre}}
+\index{Carte\_Guerre@{Carte\_Guerre}!Simulation@{Simulation}}
+\doxysubsubsection{\texorpdfstring{Carte\_Guerre}{Carte\_Guerre}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_soldat}{Soldat}}$\ast$ Simulation\+::\+Carte\+\_\+\+Guerre\mbox{[}\mbox{\hyperlink{terrain_8hpp_aa9c607c5281f43b4cbb1e14405b6c687}{TAILLE\+\_\+T}} $\ast$\mbox{\hyperlink{simulation_8hpp_a35ab942ed526bf5546586fe8ffff9daa}{TAILLE\+\_\+C}}\mbox{]}\mbox{[}\mbox{\hyperlink{terrain_8hpp_aa9c607c5281f43b4cbb1e14405b6c687}{TAILLE\+\_\+T}} $\ast$\mbox{\hyperlink{simulation_8hpp_a35ab942ed526bf5546586fe8ffff9daa}{TAILLE\+\_\+C}}\mbox{]}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+War\+\_\+\+Simulation2/\+War\+\_\+\+Simulation/src/\mbox{\hyperlink{simulation_8hpp}{simulation.\+hpp}}\item 
+D\+:/\+War\+\_\+\+Simulation2/\+War\+\_\+\+Simulation/src/\mbox{\hyperlink{simulation_8cpp}{simulation.\+cpp}}\end{DoxyCompactItemize}

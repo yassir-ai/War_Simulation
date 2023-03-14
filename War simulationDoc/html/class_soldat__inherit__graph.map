@@ -1,0 +1,7 @@
+<map id="Soldat" name="Soldat">
+<area shape="rect" id="node1" title="The Soldat class represents a soldier with attributes like health points, strength,..." alt="" coords="152,5,211,31"/>
+<area shape="rect" id="node2" href="$class_cavalerie.html" title=" " alt="" coords="5,79,80,104"/>
+<area shape="rect" id="node3" href="$class_char.html" title=" " alt="" coords="105,79,154,104"/>
+<area shape="rect" id="node4" href="$class_force___aerienne.html" title=" " alt="" coords="178,79,291,104"/>
+<area shape="rect" id="node5" href="$class_infanterie.html" title=" " alt="" coords="316,79,391,104"/>
+</map>

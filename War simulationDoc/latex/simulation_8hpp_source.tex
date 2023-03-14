@@ -1,0 +1,82 @@
+\hypertarget{simulation_8hpp_source}{}\doxysection{simulation.\+hpp}
+\label{simulation_8hpp_source}\index{D:/War\_Simulation2/War\_Simulation/src/simulation.hpp@{D:/War\_Simulation2/War\_Simulation/src/simulation.hpp}}
+\mbox{\hyperlink{simulation_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#ifndef\ SIMULATION\_\_H}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#define\ SIMULATION\_\_H}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ <ctime>}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ <algorithm>}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{soldat_8hpp}{soldat.hpp}}"{}}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{terrain_8hpp}{terrain.hpp}}"{}}}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{comment}{//\ const\ int\ TAILLE\_A\ =\ 100;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ //taille\ armee}}
+\DoxyCodeLine{00028\ \textcolor{comment}{//\ const\ int\ TAILLE\_C\ =\ 3;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ //racine\ de\ taille\ de\ la\ carte}}
+\DoxyCodeLine{00029\ \textcolor{comment}{//\ const\ int\ N\_INFA\ =\ 60;}}
+\DoxyCodeLine{00030\ \textcolor{comment}{//\ const\ int\ N\_CAVA\ =\ 20;}}
+\DoxyCodeLine{00031\ \textcolor{comment}{//\ const\ int\ N\_CHAR\ =\ 10;}}
+\DoxyCodeLine{00032\ \textcolor{comment}{//\ const\ int\ N\_AERI\ =\ 10;}}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{simulation_8hpp_a57f0c7fd78bff8692a9bcc0bac8b1ed0}{TAILLE\_A}}\ =\ 20;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00037\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{simulation_8hpp_a35ab942ed526bf5546586fe8ffff9daa}{TAILLE\_C}}\ =\ 3;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00038\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{simulation_8hpp_a2c9817c486f5c0516ce8571d92810da4}{N\_INFA}}\ =\ 10;}
+\DoxyCodeLine{00039\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{simulation_8hpp_a1d1448edc8f5882bb30bc9c64af97d9a}{N\_CAVA}}\ =\ 5;}
+\DoxyCodeLine{00040\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{simulation_8hpp_aed327ebaec9992233a63b780d941f38e}{N\_CHAR}}\ =\ 2;}
+\DoxyCodeLine{00041\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{simulation_8hpp_a1826ed1728fe4c78d52e969bcad55c58}{N\_AERI}}\ =\ 3;}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \textcolor{keyword}{using\ }std::cout;}
+\DoxyCodeLine{00044\ \textcolor{keyword}{using\ }std::endl;}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \textcolor{keyword}{typedef}\ std::vector<Soldat\ *>\ \mbox{\hyperlink{simulation_8hpp_aca840af1bcb3ea0d8ff54ccebd639aa5}{Armee}};}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_simulation}{Simulation}}}
+\DoxyCodeLine{00049\ \{}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \ \ \ \ \mbox{\hyperlink{simulation_8hpp_aca840af1bcb3ea0d8ff54ccebd639aa5}{Armee}}\ \mbox{\hyperlink{class_simulation_afb9bd6c7adc21c51b4b9c67a9933c284}{a}}[2];}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \ \ \ \ \mbox{\hyperlink{class_terrain}{Terrain}}**\ \mbox{\hyperlink{class_simulation_a47ccf2dbcefbf6f6e6f7870a66fafa73}{carte}};}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \ \ \ \ \mbox{\hyperlink{class_soldat}{Soldat}}\ *\ \mbox{\hyperlink{class_simulation_afc0040782c89e1700dafe114ab71c5ad}{Carte\_Guerre}}[\mbox{\hyperlink{terrain_8hpp_aa9c607c5281f43b4cbb1e14405b6c687}{TAILLE\_T}}\ *\ \mbox{\hyperlink{simulation_8hpp_a35ab942ed526bf5546586fe8ffff9daa}{TAILLE\_C}}][\mbox{\hyperlink{terrain_8hpp_aa9c607c5281f43b4cbb1e14405b6c687}{TAILLE\_T}}\ *\ \mbox{\hyperlink{simulation_8hpp_a35ab942ed526bf5546586fe8ffff9daa}{TAILLE\_C}}];}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \ \ \ \ \mbox{\hyperlink{class_soldat}{Soldat}}*\ \mbox{\hyperlink{class_simulation_ae862fb9bd9a9270ab637732166a4ffdf}{carte\_etat}}[\mbox{\hyperlink{terrain_8hpp_aa9c607c5281f43b4cbb1e14405b6c687}{TAILLE\_T}}\ *\ \mbox{\hyperlink{simulation_8hpp_a35ab942ed526bf5546586fe8ffff9daa}{TAILLE\_C}}][\mbox{\hyperlink{terrain_8hpp_aa9c607c5281f43b4cbb1e14405b6c687}{TAILLE\_T}}\ *\ \mbox{\hyperlink{simulation_8hpp_a35ab942ed526bf5546586fe8ffff9daa}{TAILLE\_C}}];}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \ \ \ \ \mbox{\hyperlink{class_simulation_a5b224cc5b36bcc8eb29689aff223de41}{Simulation}}();}
+\DoxyCodeLine{00064\ \ \ \ \ }
+\DoxyCodeLine{00065\ \ \ \ \ \mbox{\hyperlink{simulation_8hpp_aca840af1bcb3ea0d8ff54ccebd639aa5}{Armee}}\ \mbox{\hyperlink{class_simulation_a7d385a632dcb97211f7750be4f1fb5d0}{getA1}}();}
+\DoxyCodeLine{00066\ \ \ \ \ \mbox{\hyperlink{simulation_8hpp_aca840af1bcb3ea0d8ff54ccebd639aa5}{Armee}}\ \mbox{\hyperlink{class_simulation_a0d30c3b16ad3ee7fa162a560f2b08cc5}{getA2}}();}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_simulation_ae566251533f80dc3568f0088b72d19d3}{setA1}}(\mbox{\hyperlink{simulation_8hpp_aca840af1bcb3ea0d8ff54ccebd639aa5}{Armee}}\ );}
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_simulation_a568cfce4350f86686b695172f378d2c1}{setA2}}(\mbox{\hyperlink{simulation_8hpp_aca840af1bcb3ea0d8ff54ccebd639aa5}{Armee}}\ );}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_simulation_a549f3063ccad86e1fc6c05807f842e13}{AfficherArmees}}();}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_simulation_a5c5655ae743ed735a1c722df61bf336c}{DisperserArmee}}();}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_simulation_a40b6f8d0e9b6c67d6335722311e19625}{Progression}}();}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_simulation_a45d5e9c27b6ab3f02d78a04f08e9e172}{AfficherCarte}}();}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_simulation_a5f391de1327a020389530c047dcde108}{supprimer\_soldat}}(\mbox{\hyperlink{class_soldat}{Soldat}}*);\ \ \ \textcolor{comment}{//supprimer\ un\ soldat\ mort\ de\ l'armée}}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_simulation_a0243d4c9ee2b8c0ff45543c9ae6baaf4}{executer\_tir}}(\mbox{\hyperlink{soldat_8hpp_a522a0f4194aa69fd77cceb80ff615234}{pair}});}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_simulation_a38038379d768fdf31be58e738c7718c9}{episode}}();}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_simulation_ade817554fca1d35eaa41dc712b871d3b}{afficher\_episode}}();}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_simulation_a4b4978ee9c7eaa2c661e9676cf22b84e}{simuler}}(\textcolor{keywordtype}{int}\ );}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00089\ \ \ \ \ \mbox{\hyperlink{class_simulation_a80fad3f57dfaf195a36f7bc49bc88279}{\string~Simulation}}();}
+\DoxyCodeLine{00090\ \};}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00092\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

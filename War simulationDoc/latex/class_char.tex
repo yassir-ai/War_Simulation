@@ -1,0 +1,237 @@
+\hypertarget{class_char}{}\doxysection{Char Class Reference}
+\label{class_char}\index{Char@{Char}}
+
+
+{\ttfamily \#include $<$soldat.\+hpp$>$}
+
+
+
+Inheritance diagram for Char\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=124pt]{class_char__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Char\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=124pt]{class_char__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_char_a69cf71d4986e919bbe4282b0200af476}{Char}} ()
+\begin{DoxyCompactList}\small\item\em Constructor for the \mbox{\hyperlink{class_char}{Char}} class. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_char_adaab187994ed701e425c8dd190efc187}{Afficher\+Soldat}} () override
+\begin{DoxyCompactList}\small\item\em Displays the details of a \mbox{\hyperlink{class_char}{Char}} object. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_char_a2f97d4328df2f18585e1d3513b2500ec}{get\+Type}} () override
+\begin{DoxyCompactList}\small\item\em Return Soldier Type(\+Char) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_char_a3e3f17d43d15e01e2a662e95ebaff3b9}{restituer}} () override
+\begin{DoxyCompactList}\small\item\em After being affected by terrain weather, keep this state to prevent, multiple weather and terrain effects make the attribute stacked. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{soldat_8hpp_a522a0f4194aa69fd77cceb80ff615234}{pair}} \mbox{\hyperlink{class_char_af5581877309f23154639e3bcd1f55bfa}{bouger}} (\mbox{\hyperlink{soldat_8hpp_a522a0f4194aa69fd77cceb80ff615234}{pair}}) override
+\begin{DoxyCompactList}\small\item\em Change Location(se deplace avec un pas de 2) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{soldat_8hpp_a522a0f4194aa69fd77cceb80ff615234}{pair}} \mbox{\hyperlink{class_char_aac2afeae08c2cd4bfa9042a863e9f34f}{Position\+\_\+\+Tir}} (\mbox{\hyperlink{soldat_8hpp_a522a0f4194aa69fd77cceb80ff615234}{pair}}) override
+\begin{DoxyCompactList}\small\item\em Attack Location(il choisit une direction parmi 4 dir, puis elle tue 2 ligne(oucolomnes) de 6 personne) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_soldat}{Soldat}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_soldat_adda4a01a27eca4c9a5cac631b6202293}{Soldat}} ()
+\begin{DoxyCompactList}\small\item\em Construct a new Soldier object. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_soldat_a68a40d7d21683b805afe1622a6c07e3d}{get\+Hp}} ()
+\begin{DoxyCompactList}\small\item\em Get the soldier\textquotesingle{}s HP. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_soldat_ab1c8bef8240a6705725c8da41ec9044a}{get\+Strength}} ()
+\begin{DoxyCompactList}\small\item\em Get the soldier\textquotesingle{}s strength. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_soldat_aaecb8b8124823153f44000cd0e11a1c3}{get\+Precision}} ()
+\begin{DoxyCompactList}\small\item\em Get the soldier\textquotesingle{}s precision. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_soldat_afed359e67f9f9cd84de69aabe9c5dde3}{get\+Speed}} ()
+\begin{DoxyCompactList}\small\item\em Get the soldier\textquotesingle{}s speed. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_soldat_a4fe39abcf721e7385f795c6fb95e74ce}{get\+Id}} ()
+\begin{DoxyCompactList}\small\item\em Get the soldier\textquotesingle{}s ID. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_soldat_a50fb5abb93b411a4e923f33440cd93f2}{set\+Hp}} (int)
+\begin{DoxyCompactList}\small\item\em Set the soldier\textquotesingle{}s HP. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_soldat_afad27639ba674c31e73ccb3ffef2a4af}{set\+Strength}} (int)
+\begin{DoxyCompactList}\small\item\em Set the soldier\textquotesingle{}s strength. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_soldat_a97daea0685c409a94ce94ca9f339c874}{set\+Precision}} (float)
+\begin{DoxyCompactList}\small\item\em Set the soldier\textquotesingle{}s precision. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_soldat_ad162b5f88c4eb09a6ff9e3f8c765908c}{set\+Speed}} (int)
+\begin{DoxyCompactList}\small\item\em Set the soldier\textquotesingle{}s speed. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_soldat_a701c7d161c391f806ff9260bb7e1424f}{set\+Id}} (int)
+\begin{DoxyCompactList}\small\item\em Set the soldier\textquotesingle{}s ID. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_soldat_a534012b3c74cbf04fe72f22b8afb2ea3}{increm\+Id}} (int)
+\begin{DoxyCompactList}\small\item\em Overlay operation on the soldier\textquotesingle{}s id where the specified step size. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_soldat_a73481f3a5aaf76cff977e28207533736}{est\+Mort}} ()
+\begin{DoxyCompactList}\small\item\em Determining if a soldier is dead. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_soldat_a4af6e99b838c4a3fc60d7e5381b1e5c2}{est\+\_\+\+Ami}} (\mbox{\hyperlink{class_soldat}{Soldat}} \&)
+\begin{DoxyCompactList}\small\item\em Determine if another soldier is a friendly or enemy soldier. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_soldat_a224b13577e99ea960f15ebdc16258dd7}{decider}} ()
+\begin{DoxyCompactList}\small\item\em At this point the soldier decides whether to move or launch an attack, returning 0 for an attack and 1 for a move. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_soldat_aadbfa704cbd962671c7e5a1b958b9954}{tirer}} ()
+\begin{DoxyCompactList}\small\item\em Make the soldier shoot and return the damage dealt. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_soldat_a5ce26faa848dbc6ab21f4a48e4dc94dc}{reduire\+Hp}} (int)
+\begin{DoxyCompactList}\small\item\em Set the Health points that may be reduced by an attack. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_soldat_a90f42d2d63085ca342482366820d8686}{restituer}} ()=0
+\begin{DoxyCompactList}\small\item\em After being affected by terrain weather, keep this state to prevent, multiple weather and terrain effects make the attribute stacked. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{soldat_8hpp_a522a0f4194aa69fd77cceb80ff615234}{pair}} \mbox{\hyperlink{class_soldat_a9d251a93f65c9b485ae576dccf7ac722}{bouger}} (\mbox{\hyperlink{soldat_8hpp_a522a0f4194aa69fd77cceb80ff615234}{pair}})=0
+\begin{DoxyCompactList}\small\item\em Change Location. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{soldat_8hpp_a522a0f4194aa69fd77cceb80ff615234}{pair}} \mbox{\hyperlink{class_soldat_a08df03206c881e78e880be824607f114}{Position\+\_\+\+Tir}} (\mbox{\hyperlink{soldat_8hpp_a522a0f4194aa69fd77cceb80ff615234}{pair}})=0
+\begin{DoxyCompactList}\small\item\em Attack Location. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_soldat_a0b57b0712eefcd9fcc8434216f41bf85}{Afficher\+Soldat}} ()=0
+\begin{DoxyCompactList}\small\item\em Print the soldier\textquotesingle{}s attributes to the console. \end{DoxyCompactList}\item 
+virtual int \mbox{\hyperlink{class_soldat_afcd7882dbc493943c86f2f5eef31628b}{get\+Type}} ()=0
+\begin{DoxyCompactList}\small\item\em Which type of soldier is returned. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_soldat_a4dfb6ed7128bbbb6837e8383e5a59d13}{$\sim$\+Soldat}} ()
+\begin{DoxyCompactList}\small\item\em Default destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const int \mbox{\hyperlink{class_char_a7dbf29299eec252c591d3060211ba0ee}{type}} = 2
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+\doxysubsubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_soldat}{Soldat}}}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{class_soldat_a66b5f72ae75c9ec262d4663246532843}{hp}}
+\item 
+int \mbox{\hyperlink{class_soldat_a357782e49f3cebb49eac78763c042a99}{strength}}
+\item 
+float \mbox{\hyperlink{class_soldat_a99fedf54129943a37193e5ab4fe59e41}{precision}}
+\item 
+int \mbox{\hyperlink{class_soldat_a2bbc328f7a3e6358ec3fc48511adc7e0}{speed}}
+\item 
+int \mbox{\hyperlink{class_soldat_a3d2b945764f4b73806d97e4685d047bd}{id}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_char_a69cf71d4986e919bbe4282b0200af476}\label{class_char_a69cf71d4986e919bbe4282b0200af476}} 
+\index{Char@{Char}!Char@{Char}}
+\index{Char@{Char}!Char@{Char}}
+\doxysubsubsection{\texorpdfstring{Char()}{Char()}}
+{\footnotesize\ttfamily Char\+::\+Char (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructor for the \mbox{\hyperlink{class_char}{Char}} class. 
+
+Initializes the \mbox{\hyperlink{class_char}{Char}} object with default values. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_char_adaab187994ed701e425c8dd190efc187}\label{class_char_adaab187994ed701e425c8dd190efc187}} 
+\index{Char@{Char}!AfficherSoldat@{AfficherSoldat}}
+\index{AfficherSoldat@{AfficherSoldat}!Char@{Char}}
+\doxysubsubsection{\texorpdfstring{AfficherSoldat()}{AfficherSoldat()}}
+{\footnotesize\ttfamily void Char\+::\+Afficher\+Soldat (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Displays the details of a \mbox{\hyperlink{class_char}{Char}} object. 
+
+Displays the hit points, strength, precision, and speed of a \mbox{\hyperlink{class_char}{Char}} object. 
+
+Implements \mbox{\hyperlink{class_soldat_a0b57b0712eefcd9fcc8434216f41bf85}{Soldat}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=329pt]{class_char_adaab187994ed701e425c8dd190efc187_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_char_af5581877309f23154639e3bcd1f55bfa}\label{class_char_af5581877309f23154639e3bcd1f55bfa}} 
+\index{Char@{Char}!bouger@{bouger}}
+\index{bouger@{bouger}!Char@{Char}}
+\doxysubsubsection{\texorpdfstring{bouger()}{bouger()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{soldat_8hpp_a522a0f4194aa69fd77cceb80ff615234}{pair}} Char\+::bouger (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{soldat_8hpp_a522a0f4194aa69fd77cceb80ff615234}{pair}}}]{position }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Change Location(se deplace avec un pas de 2) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & Initial Location\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+nv\+\_\+position new Location 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_soldat_a9d251a93f65c9b485ae576dccf7ac722}{Soldat}}.
+
+\mbox{\Hypertarget{class_char_a2f97d4328df2f18585e1d3513b2500ec}\label{class_char_a2f97d4328df2f18585e1d3513b2500ec}} 
+\index{Char@{Char}!getType@{getType}}
+\index{getType@{getType}!Char@{Char}}
+\doxysubsubsection{\texorpdfstring{getType()}{getType()}}
+{\footnotesize\ttfamily int Char\+::get\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Return Soldier Type(\+Char) 
+
+\begin{DoxyReturn}{Returns}
+type Returns which type of soldier it belongs to 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_soldat_afcd7882dbc493943c86f2f5eef31628b}{Soldat}}.
+
+\mbox{\Hypertarget{class_char_aac2afeae08c2cd4bfa9042a863e9f34f}\label{class_char_aac2afeae08c2cd4bfa9042a863e9f34f}} 
+\index{Char@{Char}!Position\_Tir@{Position\_Tir}}
+\index{Position\_Tir@{Position\_Tir}!Char@{Char}}
+\doxysubsubsection{\texorpdfstring{Position\_Tir()}{Position\_Tir()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{soldat_8hpp_a522a0f4194aa69fd77cceb80ff615234}{pair}} Char\+::\+Position\+\_\+\+Tir (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{soldat_8hpp_a522a0f4194aa69fd77cceb80ff615234}{pair}}}]{position }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Attack Location(il choisit une direction parmi 4 dir, puis elle tue 2 ligne(oucolomnes) de 6 personne) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & Own position\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+nv\+\_\+position Location of the enemy 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_soldat_a08df03206c881e78e880be824607f114}{Soldat}}.
+
+\mbox{\Hypertarget{class_char_a3e3f17d43d15e01e2a662e95ebaff3b9}\label{class_char_a3e3f17d43d15e01e2a662e95ebaff3b9}} 
+\index{Char@{Char}!restituer@{restituer}}
+\index{restituer@{restituer}!Char@{Char}}
+\doxysubsubsection{\texorpdfstring{restituer()}{restituer()}}
+{\footnotesize\ttfamily void Char\+::restituer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+After being affected by terrain weather, keep this state to prevent, multiple weather and terrain effects make the attribute stacked. 
+
+
+
+Implements \mbox{\hyperlink{class_soldat_a90f42d2d63085ca342482366820d8686}{Soldat}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_char_a7dbf29299eec252c591d3060211ba0ee}\label{class_char_a7dbf29299eec252c591d3060211ba0ee}} 
+\index{Char@{Char}!type@{type}}
+\index{type@{type}!Char@{Char}}
+\doxysubsubsection{\texorpdfstring{type}{type}}
+{\footnotesize\ttfamily const int Char\+::type = 2\hspace{0.3cm}{\ttfamily [static]}}
+
+The soldier\textquotesingle{}s type.(2) 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+War\+\_\+\+Simulation2/\+War\+\_\+\+Simulation/src/\mbox{\hyperlink{soldat_8hpp}{soldat.\+hpp}}\item 
+D\+:/\+War\+\_\+\+Simulation2/\+War\+\_\+\+Simulation/src/\mbox{\hyperlink{char_8cpp}{char.\+cpp}}\end{DoxyCompactItemize}

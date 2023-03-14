@@ -1,0 +1,4 @@
+<map id="Char" name="Char">
+<area shape="rect" id="node1" title=" " alt="" coords="10,79,59,104"/>
+<area shape="rect" id="node2" href="$class_soldat.html" title="The Soldat class represents a soldier with attributes like health points, strength,..." alt="" coords="5,5,64,31"/>
+</map>

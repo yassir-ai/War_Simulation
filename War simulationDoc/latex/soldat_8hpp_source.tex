@@ -1,0 +1,125 @@
+\hypertarget{soldat_8hpp_source}{}\doxysection{soldat.\+hpp}
+\label{soldat_8hpp_source}\index{D:/War\_Simulation2/War\_Simulation/src/soldat.hpp@{D:/War\_Simulation2/War\_Simulation/src/soldat.hpp}}
+\mbox{\hyperlink{soldat_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#ifndef\ SOLDAT\_\_HPP}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#define\ SOLDAT\_\_HPP}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ <random>}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ <ctime>}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ <utility>}}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{keyword}{using\ }std::cout;}
+\DoxyCodeLine{00028\ \textcolor{keyword}{using\ }std::cin;}
+\DoxyCodeLine{00029\ \textcolor{keyword}{using\ }std::endl;}
+\DoxyCodeLine{00030\ \textcolor{keyword}{using\ }\mbox{\hyperlink{soldat_8hpp_a522a0f4194aa69fd77cceb80ff615234}{pair}}\ =\ std::pair<int,\ int>;\ }
+\DoxyCodeLine{00039\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_soldat}{Soldat}}}
+\DoxyCodeLine{00040\ \{}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_soldat_a66b5f72ae75c9ec262d4663246532843}{hp}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_soldat_a357782e49f3cebb49eac78763c042a99}{strength}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_soldat_a99fedf54129943a37193e5ab4fe59e41}{precision}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_soldat_a2bbc328f7a3e6358ec3fc48511adc7e0}{speed}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_soldat_a3d2b945764f4b73806d97e4685d047bd}{id}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00050\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \ \ \ \ \mbox{\hyperlink{class_soldat_adda4a01a27eca4c9a5cac631b6202293}{Soldat}}();}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_soldat_a68a40d7d21683b805afe1622a6c07e3d}{getHp}}();}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_soldat_ab1c8bef8240a6705725c8da41ec9044a}{getStrength}}();}
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_soldat_aaecb8b8124823153f44000cd0e11a1c3}{getPrecision}}();}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_soldat_afed359e67f9f9cd84de69aabe9c5dde3}{getSpeed}}();}
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_soldat_a4fe39abcf721e7385f795c6fb95e74ce}{getId}}();}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_soldat_a50fb5abb93b411a4e923f33440cd93f2}{setHp}}(\textcolor{keywordtype}{int}\ );}
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_soldat_afad27639ba674c31e73ccb3ffef2a4af}{setStrength}}(\textcolor{keywordtype}{int}\ );}
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_soldat_a97daea0685c409a94ce94ca9f339c874}{setPrecision}}(\textcolor{keywordtype}{float}\ );}
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_soldat_ad162b5f88c4eb09a6ff9e3f8c765908c}{setSpeed}}(\textcolor{keywordtype}{int}\ );}
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_soldat_a701c7d161c391f806ff9260bb7e1424f}{setId}}(\textcolor{keywordtype}{int}\ );}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_soldat_a534012b3c74cbf04fe72f22b8afb2ea3}{incremId}}(\textcolor{keywordtype}{int}\ );}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_soldat_a73481f3a5aaf76cff977e28207533736}{estMort}}();}
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_soldat_a4af6e99b838c4a3fc60d7e5381b1e5c2}{est\_Ami}}(\mbox{\hyperlink{class_soldat}{Soldat}}\&);}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_soldat_a224b13577e99ea960f15ebdc16258dd7}{decider}}();\ \textcolor{comment}{//\ 0\ =\ tirer,\ 1\ =\ bouger}}
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_soldat_aadbfa704cbd962671c7e5a1b958b9954}{tirer}}();}
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_soldat_a5ce26faa848dbc6ab21f4a48e4dc94dc}{reduireHp}}(\textcolor{keywordtype}{int}\ );}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_soldat_a90f42d2d63085ca342482366820d8686}{restituer}}()\ =\ 0;\ }
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00086\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{soldat_8hpp_a522a0f4194aa69fd77cceb80ff615234}{pair}}\ \mbox{\hyperlink{class_soldat_a9d251a93f65c9b485ae576dccf7ac722}{bouger}}(\mbox{\hyperlink{soldat_8hpp_a522a0f4194aa69fd77cceb80ff615234}{pair}}\ )\ =\ 0;\ \ \ \ \ }
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00095\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{soldat_8hpp_a522a0f4194aa69fd77cceb80ff615234}{pair}}\ \mbox{\hyperlink{class_soldat_a08df03206c881e78e880be824607f114}{Position\_Tir}}(\mbox{\hyperlink{soldat_8hpp_a522a0f4194aa69fd77cceb80ff615234}{pair}}\ )\ =\ 0;}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00097\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_soldat_a0b57b0712eefcd9fcc8434216f41bf85}{AfficherSoldat}}()\ =\ 0;}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00104\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_soldat_afcd7882dbc493943c86f2f5eef31628b}{getType}}()\ =\ 0;}
+\DoxyCodeLine{00105\ \ \ \ \ }
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00107\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_soldat_a4dfb6ed7128bbbb6837e8383e5a59d13}{\string~Soldat}}();}
+\DoxyCodeLine{00108\ \};}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00110\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_infanterie}{Infanterie}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_soldat}{Soldat}}\ \ \textcolor{comment}{//0}}
+\DoxyCodeLine{00111\ \{}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00113\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00115\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_infanterie_abe0afc8df4e9f1977b5adfac13081d14}{type}};}
+\DoxyCodeLine{00116\ \ \ \ \ \mbox{\hyperlink{class_infanterie_ac53af1d21c4658ac3c3a179848bb0bb2}{Infanterie}}();}
+\DoxyCodeLine{00117\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_infanterie_ac3f81fc37f4b7ccdbf935821e0472ead}{AfficherSoldat}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00118\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_infanterie_a77066503ddde292f1ef955a33e14bf7b}{getType}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00119\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_infanterie_a4bf87717f3f6b33f4eae2433a6889177}{restituer}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00120\ \ \ \ \ \mbox{\hyperlink{soldat_8hpp_a522a0f4194aa69fd77cceb80ff615234}{pair}}\ \mbox{\hyperlink{class_infanterie_acf7afd58d5d95fccc154cf6ae37433a1}{bouger}}(\mbox{\hyperlink{soldat_8hpp_a522a0f4194aa69fd77cceb80ff615234}{pair}}\ )\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00121\ \ \ \ \ \mbox{\hyperlink{soldat_8hpp_a522a0f4194aa69fd77cceb80ff615234}{pair}}\ \mbox{\hyperlink{class_infanterie_a26882a5d8689f7b8835e6ba7753f3cc4}{Position\_Tir}}(\mbox{\hyperlink{soldat_8hpp_a522a0f4194aa69fd77cceb80ff615234}{pair}}\ )\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00122\ \};}
+\DoxyCodeLine{00123\ }
+\DoxyCodeLine{00124\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_cavalerie}{Cavalerie}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_soldat}{Soldat}}\ \ \ \textcolor{comment}{//1}}
+\DoxyCodeLine{00125\ \{}
+\DoxyCodeLine{00126\ }
+\DoxyCodeLine{00127\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00128\ }
+\DoxyCodeLine{00129\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_cavalerie_a7c53c96baac87525d043417e85e066f6}{type}};}
+\DoxyCodeLine{00130\ \ \ \ \ \mbox{\hyperlink{class_cavalerie_a58b647c3148c4b4b85e2279771e140af}{Cavalerie}}();}
+\DoxyCodeLine{00131\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_cavalerie_a8f8ca7e7571f5f0e9c60d7d93877395e}{AfficherSoldat}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00132\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_cavalerie_a716e230f0e127442c5d68a0b30af2bed}{getType}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00133\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_cavalerie_a4458e0f7042a5de81514ac0ba039349a}{restituer}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00134\ \ \ \ \ \mbox{\hyperlink{soldat_8hpp_a522a0f4194aa69fd77cceb80ff615234}{pair}}\ \mbox{\hyperlink{class_cavalerie_a876bffe68a56d55358a8967fb087ff07}{bouger}}(\mbox{\hyperlink{soldat_8hpp_a522a0f4194aa69fd77cceb80ff615234}{pair}}\ )\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00135\ \ \ \ \ \mbox{\hyperlink{soldat_8hpp_a522a0f4194aa69fd77cceb80ff615234}{pair}}\ \mbox{\hyperlink{class_cavalerie_a858469bf6d8c1f192e02220c18404c14}{Position\_Tir}}(\mbox{\hyperlink{soldat_8hpp_a522a0f4194aa69fd77cceb80ff615234}{pair}}\ )\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00136\ \};}
+\DoxyCodeLine{00137\ }
+\DoxyCodeLine{00138\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_char}{Char}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_soldat}{Soldat}}\ \ \ \ \ \textcolor{comment}{//2}}
+\DoxyCodeLine{00139\ \{}
+\DoxyCodeLine{00140\ }
+\DoxyCodeLine{00141\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00142\ }
+\DoxyCodeLine{00143\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_char_a7dbf29299eec252c591d3060211ba0ee}{type}};}
+\DoxyCodeLine{00144\ \ \ \ \ \mbox{\hyperlink{class_char_a69cf71d4986e919bbe4282b0200af476}{Char}}();}
+\DoxyCodeLine{00145\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_char_adaab187994ed701e425c8dd190efc187}{AfficherSoldat}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00146\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_char_a2f97d4328df2f18585e1d3513b2500ec}{getType}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00147\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_char_a3e3f17d43d15e01e2a662e95ebaff3b9}{restituer}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00148\ \ \ \ \ \mbox{\hyperlink{soldat_8hpp_a522a0f4194aa69fd77cceb80ff615234}{pair}}\ \mbox{\hyperlink{class_char_af5581877309f23154639e3bcd1f55bfa}{bouger}}(\mbox{\hyperlink{soldat_8hpp_a522a0f4194aa69fd77cceb80ff615234}{pair}}\ )\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00149\ \ \ \ \ \mbox{\hyperlink{soldat_8hpp_a522a0f4194aa69fd77cceb80ff615234}{pair}}\ \mbox{\hyperlink{class_char_aac2afeae08c2cd4bfa9042a863e9f34f}{Position\_Tir}}(\mbox{\hyperlink{soldat_8hpp_a522a0f4194aa69fd77cceb80ff615234}{pair}}\ )\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00150\ \};}
+\DoxyCodeLine{00151\ }
+\DoxyCodeLine{00152\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_force___aerienne}{Force\_Aerienne}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_soldat}{Soldat}}\ \ \ \ \textcolor{comment}{//3}}
+\DoxyCodeLine{00153\ \{}
+\DoxyCodeLine{00154\ }
+\DoxyCodeLine{00155\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00156\ }
+\DoxyCodeLine{00157\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_force___aerienne_ab9968f6a0d5de4ca1ee7d50bd0107355}{type}};}
+\DoxyCodeLine{00158\ \ \ \ \ \mbox{\hyperlink{class_force___aerienne_a78a9197c2124daa55a141d0216a06248}{Force\_Aerienne}}();}
+\DoxyCodeLine{00159\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_force___aerienne_ad1b545bf325a8ffae62d25d823d62b2d}{AfficherSoldat}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00160\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_force___aerienne_a0bd57a61cf5fb241797da3ebc62e19f9}{getType}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00161\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_force___aerienne_a70ce54885ee18d7debd7157f70c2f334}{restituer}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00162\ \ \ \ \ \mbox{\hyperlink{soldat_8hpp_a522a0f4194aa69fd77cceb80ff615234}{pair}}\ \mbox{\hyperlink{class_force___aerienne_a24e57f40714534f8b32c0cbd3dfaf8de}{bouger}}(\mbox{\hyperlink{soldat_8hpp_a522a0f4194aa69fd77cceb80ff615234}{pair}}\ )\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00163\ \ \ \ \ \mbox{\hyperlink{soldat_8hpp_a522a0f4194aa69fd77cceb80ff615234}{pair}}\ \mbox{\hyperlink{class_force___aerienne_af7a2f20f66570212767e4cf9427a22f0}{Position\_Tir}}(\mbox{\hyperlink{soldat_8hpp_a522a0f4194aa69fd77cceb80ff615234}{pair}}\ )\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00164\ \};}
+\DoxyCodeLine{00165\ }
+\DoxyCodeLine{00166\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -1,0 +1,53 @@
+\hypertarget{terrain_8hpp_source}{}\doxysection{terrain.\+hpp}
+\label{terrain_8hpp_source}\index{D:/War\_Simulation2/War\_Simulation/src/terrain.hpp@{D:/War\_Simulation2/War\_Simulation/src/terrain.hpp}}
+\mbox{\hyperlink{terrain_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#ifndef\ TERRAIN\_\_HPP}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#define\ TERRAIN\_\_HPP}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ <ctime>}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{soldat_8hpp}{soldat.hpp}}"{}}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{terrain_8hpp_aa9c607c5281f43b4cbb1e14405b6c687}{TAILLE\_T}}\ =\ 5;}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00034\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{terrain_8hpp_a7694c329b6cd416415f4899e713fae9e}{Meteo}}}
+\DoxyCodeLine{00035\ \{}
+\DoxyCodeLine{00036\ \ \ \ \ \mbox{\hyperlink{terrain_8hpp_a7694c329b6cd416415f4899e713fae9eaf1b15f3241914ed951e4a699d459b12f}{SOLEIL}},\ \ \ }
+\DoxyCodeLine{00037\ \ \ \ \ \mbox{\hyperlink{terrain_8hpp_a7694c329b6cd416415f4899e713fae9ea0d89eb646f3cfb866323efe8d4a5ca94}{TEMPETE}},\ \ }
+\DoxyCodeLine{00038\ \ \ \ \ \mbox{\hyperlink{terrain_8hpp_a7694c329b6cd416415f4899e713fae9ea40b547f7d33800240dc193402c07479a}{BROUILLARD}}\ \ \ }
+\DoxyCodeLine{00039\ \};}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00047\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{terrain_8hpp_a41faeeb3db3a1b16965d601ccd1c2fe3}{Topographie}}}
+\DoxyCodeLine{00048\ \{}
+\DoxyCodeLine{00049\ \ \ \ \ \mbox{\hyperlink{terrain_8hpp_a41faeeb3db3a1b16965d601ccd1c2fe3ad250e1abb10e687273cde2c9fc965f1d}{PLAINE}},\ \ }
+\DoxyCodeLine{00050\ \ \ \ \ \mbox{\hyperlink{terrain_8hpp_a41faeeb3db3a1b16965d601ccd1c2fe3aa4f0cd847a9165e32d68c2256505686e}{FORET}},\ \ \ }
+\DoxyCodeLine{00051\ \ \ \ \ \mbox{\hyperlink{terrain_8hpp_a41faeeb3db3a1b16965d601ccd1c2fe3a0cdaec7ae7cb694230a8541c8bea7fe7}{MONTAGNE}}\ \ \ }
+\DoxyCodeLine{00052\ \};}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00061\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_terrain}{Terrain}}}
+\DoxyCodeLine{00062\ \{}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \ \ \ \ \mbox{\hyperlink{terrain_8hpp_a41faeeb3db3a1b16965d601ccd1c2fe3}{Topographie}}\ \mbox{\hyperlink{class_terrain_a71dad848bcb0ab43a1dd976ad9ec4295}{topo}};\ }
+\DoxyCodeLine{00067\ \ \ \ \ \mbox{\hyperlink{terrain_8hpp_a7694c329b6cd416415f4899e713fae9e}{Meteo}}\ \ \mbox{\hyperlink{class_terrain_a9e4cf8f2adf6a55ca74aa7fbe89c8297}{meteo}};\ \ }
+\DoxyCodeLine{00069\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \ \ \ \ \mbox{\hyperlink{class_soldat}{Soldat}}\ *\ \mbox{\hyperlink{class_terrain_accb27bd87649ad9a2878feb7fd61a99d}{matrice}}[\mbox{\hyperlink{terrain_8hpp_aa9c607c5281f43b4cbb1e14405b6c687}{TAILLE\_T}}][\mbox{\hyperlink{terrain_8hpp_aa9c607c5281f43b4cbb1e14405b6c687}{TAILLE\_T}}];}
+\DoxyCodeLine{00072\ \ \ \ \ \mbox{\hyperlink{class_terrain_a7160a06ab07a86ed97d23374405e8ef6}{Terrain}}();}
+\DoxyCodeLine{00073\ \ \ \ \ \mbox{\hyperlink{terrain_8hpp_a41faeeb3db3a1b16965d601ccd1c2fe3}{Topographie}}\ \mbox{\hyperlink{class_terrain_aee4c74d5420d557844ef82da5cc03573}{getTopographie}}();}
+\DoxyCodeLine{00074\ \ \ \ \ \mbox{\hyperlink{terrain_8hpp_a7694c329b6cd416415f4899e713fae9e}{Meteo}}\ \mbox{\hyperlink{class_terrain_a8b580225872b75a2b4619225f95a1a19}{getMeteo}}();}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_terrain_a4a8e096d33c2e0907a80a55d790af480}{setTopographie}}(\mbox{\hyperlink{terrain_8hpp_a41faeeb3db3a1b16965d601ccd1c2fe3}{Topographie}}\ );}
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_terrain_a655b4bdc10a360cc84a9bc12016905f4}{setMeteo}}(\mbox{\hyperlink{terrain_8hpp_a7694c329b6cd416415f4899e713fae9e}{Meteo}}\ );}
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_terrain_ad55685c215a93a273642f0580ed19e71}{AfficherTerrain}}();}
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_terrain_aa3c1aa4b30a6eb89877029f13a470ccc}{InfluenceSoldat}}(\ \mbox{\hyperlink{class_soldat}{Soldat}}\&\ \ );}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ \};}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

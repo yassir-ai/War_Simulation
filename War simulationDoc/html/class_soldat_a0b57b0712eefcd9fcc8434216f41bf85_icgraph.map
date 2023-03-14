@@ -1,0 +1,9 @@
+<map id="Soldat::AfficherSoldat" name="Soldat::AfficherSoldat">
+<area shape="rect" id="node1" title="Print the soldier&#39;s attributes to the console." alt="" coords="431,104,577,129"/>
+<area shape="rect" id="node2" href="$class_infanterie.html#ac3f81fc37f4b7ccdbf935821e0472ead" title="Displays the details of a Infanterie object." alt="" coords="219,5,382,31"/>
+<area shape="rect" id="node3" href="$class_cavalerie.html#a8f8ca7e7571f5f0e9c60d7d93877395e" title="Displays the attributes of the Cavalerie object." alt="" coords="219,55,382,80"/>
+<area shape="rect" id="node4" href="$class_char.html#adaab187994ed701e425c8dd190efc187" title="Displays the details of a Char object." alt="" coords="232,104,369,129"/>
+<area shape="rect" id="node5" href="$class_force___aerienne.html#ad1b545bf325a8ffae62d25d823d62b2d" title="Displays the details of a Force_Aerienne object." alt="" coords="219,154,383,194"/>
+<area shape="rect" id="node6" href="$class_terrain.html#ad55685c215a93a273642f0580ed19e71" title="Displays the terrain with the soldiers present on each square." alt="" coords="225,219,376,244"/>
+<area shape="rect" id="node7" href="$class_simulation.html#a45d5e9c27b6ab3f02d78a04f08e9e172" title="Exportation des conditions météorologiques du terrain de la carte." alt="" coords="5,219,171,244"/>
+</map>

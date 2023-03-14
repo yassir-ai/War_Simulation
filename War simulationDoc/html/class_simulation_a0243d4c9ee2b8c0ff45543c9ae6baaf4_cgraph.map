@@ -1,0 +1,11 @@
+<map id="Simulation::executer_tir" name="Simulation::executer_tir">
+<area shape="rect" id="node1" title="Simulation of two armies sending war." alt="" coords="5,181,164,207"/>
+<area shape="rect" id="node2" href="$class_soldat.html#a4af6e99b838c4a3fc60d7e5381b1e5c2" title="Determine if another soldier is a friendly or enemy soldier." alt="" coords="229,5,343,31"/>
+<area shape="rect" id="node3" href="$class_soldat.html#a4fe39abcf721e7385f795c6fb95e74ce" title="Get the soldier&#39;s ID." alt="" coords="408,31,503,56"/>
+<area shape="rect" id="node4" href="$class_soldat.html#a73481f3a5aaf76cff977e28207533736" title="Determining if a soldier is dead." alt="" coords="231,107,341,132"/>
+<area shape="rect" id="node5" href="$class_soldat.html#afcd7882dbc493943c86f2f5eef31628b" title="Which type of soldier is returned." alt="" coords="229,156,343,181"/>
+<area shape="rect" id="node6" href="$class_soldat.html#a08df03206c881e78e880be824607f114" title="Attack Location." alt="" coords="219,205,353,231"/>
+<area shape="rect" id="node7" href="$class_soldat.html#a5ce26faa848dbc6ab21f4a48e4dc94dc" title="Set the Health points that may be reduced by an attack." alt="" coords="225,255,347,280"/>
+<area shape="rect" id="node8" href="$class_simulation.html#a5f391de1327a020389530c047dcde108" title="Soldat Mort Effacer Soldat&lt;This function has been replaced with other functions&gt;" alt="" coords="212,305,360,345"/>
+<area shape="rect" id="node9" href="$class_soldat.html#aadbfa704cbd962671c7e5a1b958b9954" title="Make the soldier shoot and return the damage dealt." alt="" coords="241,369,331,395"/>
+</map>

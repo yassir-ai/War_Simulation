@@ -1,0 +1,6 @@
+<map id="Simulation::Progression" name="Simulation::Progression">
+<area shape="rect" id="node1" title="Mise à jour de la carte simulée avec les deux armées." alt="" coords="469,31,629,56"/>
+<area shape="rect" id="node2" href="$class_simulation.html#a38038379d768fdf31be58e738c7718c9" title="The move and attack simulation functions, along with the executer_tir(pair pos_soldat_cour) function,..." alt="" coords="285,5,421,31"/>
+<area shape="rect" id="node3" href="$class_simulation.html#a4b4978ee9c7eaa2c661e9676cf22b84e" title="Simulate each round of war or movement." alt="" coords="104,31,237,56"/>
+<area shape="rect" id="node4" href="$main_8cpp.html#a2c3f6775325c30275d11c6abee2db6a0" title=" " alt="" coords="5,31,56,56"/>
+</map>

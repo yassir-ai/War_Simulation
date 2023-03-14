@@ -1,0 +1,7 @@
+<map id="Simulation::AfficherCarte" name="Simulation::AfficherCarte">
+<area shape="rect" id="node1" title="Exportation des conditions météorologiques du terrain de la carte." alt="" coords="5,55,171,80"/>
+<area shape="rect" id="node2" href="$class_terrain.html#ad55685c215a93a273642f0580ed19e71" title="Displays the terrain with the soldiers present on each square." alt="" coords="222,5,373,31"/>
+<area shape="rect" id="node4" href="$class_terrain.html#a8b580225872b75a2b4619225f95a1a19" title="Gets the weather condition of the terrain." alt="" coords="236,55,359,80"/>
+<area shape="rect" id="node5" href="$class_terrain.html#aee4c74d5420d557844ef82da5cc03573" title="Gets the topography of the terrain." alt="" coords="219,104,376,129"/>
+<area shape="rect" id="node3" href="$class_soldat.html#a0b57b0712eefcd9fcc8434216f41bf85" title="Print the soldier&#39;s attributes to the console." alt="" coords="424,5,571,31"/>
+</map>

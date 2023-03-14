@@ -1,0 +1,8 @@
+<map id="Soldat::getPrecision" name="Soldat::getPrecision">
+<area shape="rect" id="node1" title="Get the soldier&#39;s precision." alt="" coords="725,29,864,55"/>
+<area shape="rect" id="node2" href="$class_terrain.html#aa3c1aa4b30a6eb89877029f13a470ccc" title="Modifie les caractéristiques d&#39;un soldat en fonction de la météo et de la topographie." alt="" coords="520,29,677,55"/>
+<area shape="rect" id="node3" href="$class_simulation.html#a5c5655ae743ed735a1c722df61bf336c" title="Random distribution of two armies, that is, the initialization of two armies on the map...." alt="" coords="104,5,288,31"/>
+<area shape="rect" id="node5" href="$class_simulation.html#a38038379d768fdf31be58e738c7718c9" title="The move and attack simulation functions, along with the executer_tir(pair pos_soldat_cour) function,..." alt="" coords="336,55,472,80"/>
+<area shape="rect" id="node4" href="$main_8cpp.html#a2c3f6775325c30275d11c6abee2db6a0" title=" " alt="" coords="5,31,56,56"/>
+<area shape="rect" id="node6" href="$class_simulation.html#a4b4978ee9c7eaa2c661e9676cf22b84e" title="Simulate each round of war or movement." alt="" coords="129,55,263,80"/>
+</map>

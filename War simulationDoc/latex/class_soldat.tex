@@ -1,0 +1,600 @@
+\hypertarget{class_soldat}{}\doxysection{Soldat Class Reference}
+\label{class_soldat}\index{Soldat@{Soldat}}
+
+
+The \mbox{\hyperlink{class_soldat}{Soldat}} class represents a soldier with attributes like health points, strength, precision, speed, and an ID.  
+
+
+
+
+{\ttfamily \#include $<$soldat.\+hpp$>$}
+
+
+
+Inheritance diagram for Soldat\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_soldat__inherit__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_soldat_adda4a01a27eca4c9a5cac631b6202293}{Soldat}} ()
+\begin{DoxyCompactList}\small\item\em Construct a new Soldier object. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_soldat_a68a40d7d21683b805afe1622a6c07e3d}{get\+Hp}} ()
+\begin{DoxyCompactList}\small\item\em Get the soldier\textquotesingle{}s HP. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_soldat_ab1c8bef8240a6705725c8da41ec9044a}{get\+Strength}} ()
+\begin{DoxyCompactList}\small\item\em Get the soldier\textquotesingle{}s strength. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_soldat_aaecb8b8124823153f44000cd0e11a1c3}{get\+Precision}} ()
+\begin{DoxyCompactList}\small\item\em Get the soldier\textquotesingle{}s precision. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_soldat_afed359e67f9f9cd84de69aabe9c5dde3}{get\+Speed}} ()
+\begin{DoxyCompactList}\small\item\em Get the soldier\textquotesingle{}s speed. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_soldat_a4fe39abcf721e7385f795c6fb95e74ce}{get\+Id}} ()
+\begin{DoxyCompactList}\small\item\em Get the soldier\textquotesingle{}s ID. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_soldat_a50fb5abb93b411a4e923f33440cd93f2}{set\+Hp}} (int)
+\begin{DoxyCompactList}\small\item\em Set the soldier\textquotesingle{}s HP. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_soldat_afad27639ba674c31e73ccb3ffef2a4af}{set\+Strength}} (int)
+\begin{DoxyCompactList}\small\item\em Set the soldier\textquotesingle{}s strength. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_soldat_a97daea0685c409a94ce94ca9f339c874}{set\+Precision}} (float)
+\begin{DoxyCompactList}\small\item\em Set the soldier\textquotesingle{}s precision. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_soldat_ad162b5f88c4eb09a6ff9e3f8c765908c}{set\+Speed}} (int)
+\begin{DoxyCompactList}\small\item\em Set the soldier\textquotesingle{}s speed. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_soldat_a701c7d161c391f806ff9260bb7e1424f}{set\+Id}} (int)
+\begin{DoxyCompactList}\small\item\em Set the soldier\textquotesingle{}s ID. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_soldat_a534012b3c74cbf04fe72f22b8afb2ea3}{increm\+Id}} (int)
+\begin{DoxyCompactList}\small\item\em Overlay operation on the soldier\textquotesingle{}s id where the specified step size. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_soldat_a73481f3a5aaf76cff977e28207533736}{est\+Mort}} ()
+\begin{DoxyCompactList}\small\item\em Determining if a soldier is dead. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_soldat_a4af6e99b838c4a3fc60d7e5381b1e5c2}{est\+\_\+\+Ami}} (\mbox{\hyperlink{class_soldat}{Soldat}} \&)
+\begin{DoxyCompactList}\small\item\em Determine if another soldier is a friendly or enemy soldier. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_soldat_a224b13577e99ea960f15ebdc16258dd7}{decider}} ()
+\begin{DoxyCompactList}\small\item\em At this point the soldier decides whether to move or launch an attack, returning 0 for an attack and 1 for a move. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_soldat_aadbfa704cbd962671c7e5a1b958b9954}{tirer}} ()
+\begin{DoxyCompactList}\small\item\em Make the soldier shoot and return the damage dealt. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_soldat_a5ce26faa848dbc6ab21f4a48e4dc94dc}{reduire\+Hp}} (int)
+\begin{DoxyCompactList}\small\item\em Set the Health points that may be reduced by an attack. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_soldat_a90f42d2d63085ca342482366820d8686}{restituer}} ()=0
+\begin{DoxyCompactList}\small\item\em After being affected by terrain weather, keep this state to prevent, multiple weather and terrain effects make the attribute stacked. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{soldat_8hpp_a522a0f4194aa69fd77cceb80ff615234}{pair}} \mbox{\hyperlink{class_soldat_a9d251a93f65c9b485ae576dccf7ac722}{bouger}} (\mbox{\hyperlink{soldat_8hpp_a522a0f4194aa69fd77cceb80ff615234}{pair}})=0
+\begin{DoxyCompactList}\small\item\em Change Location. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{soldat_8hpp_a522a0f4194aa69fd77cceb80ff615234}{pair}} \mbox{\hyperlink{class_soldat_a08df03206c881e78e880be824607f114}{Position\+\_\+\+Tir}} (\mbox{\hyperlink{soldat_8hpp_a522a0f4194aa69fd77cceb80ff615234}{pair}})=0
+\begin{DoxyCompactList}\small\item\em Attack Location. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_soldat_a0b57b0712eefcd9fcc8434216f41bf85}{Afficher\+Soldat}} ()=0
+\begin{DoxyCompactList}\small\item\em Print the soldier\textquotesingle{}s attributes to the console. \end{DoxyCompactList}\item 
+virtual int \mbox{\hyperlink{class_soldat_afcd7882dbc493943c86f2f5eef31628b}{get\+Type}} ()=0
+\begin{DoxyCompactList}\small\item\em Which type of soldier is returned. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_soldat_a4dfb6ed7128bbbb6837e8383e5a59d13}{$\sim$\+Soldat}} ()
+\begin{DoxyCompactList}\small\item\em Default destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{class_soldat_a66b5f72ae75c9ec262d4663246532843}{hp}}
+\item 
+int \mbox{\hyperlink{class_soldat_a357782e49f3cebb49eac78763c042a99}{strength}}
+\item 
+float \mbox{\hyperlink{class_soldat_a99fedf54129943a37193e5ab4fe59e41}{precision}}
+\item 
+int \mbox{\hyperlink{class_soldat_a2bbc328f7a3e6358ec3fc48511adc7e0}{speed}}
+\item 
+int \mbox{\hyperlink{class_soldat_a3d2b945764f4b73806d97e4685d047bd}{id}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The \mbox{\hyperlink{class_soldat}{Soldat}} class represents a soldier with attributes like health points, strength, precision, speed, and an ID. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_soldat_adda4a01a27eca4c9a5cac631b6202293}\label{class_soldat_adda4a01a27eca4c9a5cac631b6202293}} 
+\index{Soldat@{Soldat}!Soldat@{Soldat}}
+\index{Soldat@{Soldat}!Soldat@{Soldat}}
+\doxysubsubsection{\texorpdfstring{Soldat()}{Soldat()}}
+{\footnotesize\ttfamily Soldat\+::\+Soldat (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Construct a new Soldier object. 
+
+\mbox{\Hypertarget{class_soldat_a4dfb6ed7128bbbb6837e8383e5a59d13}\label{class_soldat_a4dfb6ed7128bbbb6837e8383e5a59d13}} 
+\index{Soldat@{Soldat}!````~Soldat@{$\sim$Soldat}}
+\index{````~Soldat@{$\sim$Soldat}!Soldat@{Soldat}}
+\doxysubsubsection{\texorpdfstring{$\sim$Soldat()}{~Soldat()}}
+{\footnotesize\ttfamily Soldat\+::$\sim$\+Soldat (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Default destructor. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_soldat_a0b57b0712eefcd9fcc8434216f41bf85}\label{class_soldat_a0b57b0712eefcd9fcc8434216f41bf85}} 
+\index{Soldat@{Soldat}!AfficherSoldat@{AfficherSoldat}}
+\index{AfficherSoldat@{AfficherSoldat}!Soldat@{Soldat}}
+\doxysubsubsection{\texorpdfstring{AfficherSoldat()}{AfficherSoldat()}}
+{\footnotesize\ttfamily void Soldat\+::\+Afficher\+Soldat (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Print the soldier\textquotesingle{}s attributes to the console. 
+
+
+
+Implemented in \mbox{\hyperlink{class_infanterie_ac3f81fc37f4b7ccdbf935821e0472ead}{Infanterie}}, \mbox{\hyperlink{class_cavalerie_a8f8ca7e7571f5f0e9c60d7d93877395e}{Cavalerie}}, \mbox{\hyperlink{class_char_adaab187994ed701e425c8dd190efc187}{Char}}, and \mbox{\hyperlink{class_force___aerienne_ad1b545bf325a8ffae62d25d823d62b2d}{Force\+\_\+\+Aerienne}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_soldat_a0b57b0712eefcd9fcc8434216f41bf85_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_soldat_a9d251a93f65c9b485ae576dccf7ac722}\label{class_soldat_a9d251a93f65c9b485ae576dccf7ac722}} 
+\index{Soldat@{Soldat}!bouger@{bouger}}
+\index{bouger@{bouger}!Soldat@{Soldat}}
+\doxysubsubsection{\texorpdfstring{bouger()}{bouger()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{soldat_8hpp_a522a0f4194aa69fd77cceb80ff615234}{pair}} Soldat\+::bouger (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{soldat_8hpp_a522a0f4194aa69fd77cceb80ff615234}{pair}}}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Change Location. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & Initial Location\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+nv\+\_\+position new Location 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_infanterie_acf7afd58d5d95fccc154cf6ae37433a1}{Infanterie}}, \mbox{\hyperlink{class_cavalerie_a876bffe68a56d55358a8967fb087ff07}{Cavalerie}}, \mbox{\hyperlink{class_char_af5581877309f23154639e3bcd1f55bfa}{Char}}, and \mbox{\hyperlink{class_force___aerienne_a24e57f40714534f8b32c0cbd3dfaf8de}{Force\+\_\+\+Aerienne}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_soldat_a9d251a93f65c9b485ae576dccf7ac722_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_soldat_a224b13577e99ea960f15ebdc16258dd7}\label{class_soldat_a224b13577e99ea960f15ebdc16258dd7}} 
+\index{Soldat@{Soldat}!decider@{decider}}
+\index{decider@{decider}!Soldat@{Soldat}}
+\doxysubsubsection{\texorpdfstring{decider()}{decider()}}
+{\footnotesize\ttfamily int Soldat\+::decider (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+At this point the soldier decides whether to move or launch an attack, returning 0 for an attack and 1 for a move. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pas} & The new value of the soldier\textquotesingle{}s ID. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0/1 =\texorpdfstring{$>$}{>} tirer/bouger 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_soldat_a224b13577e99ea960f15ebdc16258dd7_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_soldat_a4af6e99b838c4a3fc60d7e5381b1e5c2}\label{class_soldat_a4af6e99b838c4a3fc60d7e5381b1e5c2}} 
+\index{Soldat@{Soldat}!est\_Ami@{est\_Ami}}
+\index{est\_Ami@{est\_Ami}!Soldat@{Soldat}}
+\doxysubsubsection{\texorpdfstring{est\_Ami()}{est\_Ami()}}
+{\footnotesize\ttfamily bool Soldat\+::est\+\_\+\+Ami (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_soldat}{Soldat}} \&}]{sol }\end{DoxyParamCaption})}
+
+
+
+Determine if another soldier is a friendly or enemy soldier. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sol} & another soldier \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true/false =\texorpdfstring{$>$}{>} friendly soldier / enemy soldier 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=273pt]{class_soldat_a4af6e99b838c4a3fc60d7e5381b1e5c2_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_soldat_a4af6e99b838c4a3fc60d7e5381b1e5c2_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_soldat_a73481f3a5aaf76cff977e28207533736}\label{class_soldat_a73481f3a5aaf76cff977e28207533736}} 
+\index{Soldat@{Soldat}!estMort@{estMort}}
+\index{estMort@{estMort}!Soldat@{Soldat}}
+\doxysubsubsection{\texorpdfstring{estMort()}{estMort()}}
+{\footnotesize\ttfamily bool Soldat\+::est\+Mort (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Determining if a soldier is dead. 
+
+\begin{DoxyReturn}{Returns}
+true/false =\texorpdfstring{$>$}{>} Dead/\+Live 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_soldat_a73481f3a5aaf76cff977e28207533736_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_soldat_a68a40d7d21683b805afe1622a6c07e3d}\label{class_soldat_a68a40d7d21683b805afe1622a6c07e3d}} 
+\index{Soldat@{Soldat}!getHp@{getHp}}
+\index{getHp@{getHp}!Soldat@{Soldat}}
+\doxysubsubsection{\texorpdfstring{getHp()}{getHp()}}
+{\footnotesize\ttfamily int Soldat\+::get\+Hp (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the soldier\textquotesingle{}s HP. 
+
+\begin{DoxyReturn}{Returns}
+The soldier\textquotesingle{}s HP. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_soldat_a4fe39abcf721e7385f795c6fb95e74ce}\label{class_soldat_a4fe39abcf721e7385f795c6fb95e74ce}} 
+\index{Soldat@{Soldat}!getId@{getId}}
+\index{getId@{getId}!Soldat@{Soldat}}
+\doxysubsubsection{\texorpdfstring{getId()}{getId()}}
+{\footnotesize\ttfamily int Soldat\+::get\+Id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the soldier\textquotesingle{}s ID. 
+
+\begin{DoxyReturn}{Returns}
+The soldier\textquotesingle{}s ID. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_soldat_a4fe39abcf721e7385f795c6fb95e74ce_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_soldat_aaecb8b8124823153f44000cd0e11a1c3}\label{class_soldat_aaecb8b8124823153f44000cd0e11a1c3}} 
+\index{Soldat@{Soldat}!getPrecision@{getPrecision}}
+\index{getPrecision@{getPrecision}!Soldat@{Soldat}}
+\doxysubsubsection{\texorpdfstring{getPrecision()}{getPrecision()}}
+{\footnotesize\ttfamily float Soldat\+::get\+Precision (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the soldier\textquotesingle{}s precision. 
+
+\begin{DoxyReturn}{Returns}
+The soldier\textquotesingle{}s precision. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_soldat_aaecb8b8124823153f44000cd0e11a1c3_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_soldat_afed359e67f9f9cd84de69aabe9c5dde3}\label{class_soldat_afed359e67f9f9cd84de69aabe9c5dde3}} 
+\index{Soldat@{Soldat}!getSpeed@{getSpeed}}
+\index{getSpeed@{getSpeed}!Soldat@{Soldat}}
+\doxysubsubsection{\texorpdfstring{getSpeed()}{getSpeed()}}
+{\footnotesize\ttfamily int Soldat\+::get\+Speed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the soldier\textquotesingle{}s speed. 
+
+\begin{DoxyReturn}{Returns}
+The soldier\textquotesingle{}s speed. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_soldat_afed359e67f9f9cd84de69aabe9c5dde3_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_soldat_ab1c8bef8240a6705725c8da41ec9044a}\label{class_soldat_ab1c8bef8240a6705725c8da41ec9044a}} 
+\index{Soldat@{Soldat}!getStrength@{getStrength}}
+\index{getStrength@{getStrength}!Soldat@{Soldat}}
+\doxysubsubsection{\texorpdfstring{getStrength()}{getStrength()}}
+{\footnotesize\ttfamily int Soldat\+::get\+Strength (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the soldier\textquotesingle{}s strength. 
+
+\begin{DoxyReturn}{Returns}
+The soldier\textquotesingle{}s strength. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_soldat_afcd7882dbc493943c86f2f5eef31628b}\label{class_soldat_afcd7882dbc493943c86f2f5eef31628b}} 
+\index{Soldat@{Soldat}!getType@{getType}}
+\index{getType@{getType}!Soldat@{Soldat}}
+\doxysubsubsection{\texorpdfstring{getType()}{getType()}}
+{\footnotesize\ttfamily virtual int Soldat\+::get\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Which type of soldier is returned. 
+
+\begin{DoxyReturn}{Returns}
+Soldier Type 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_infanterie_a77066503ddde292f1ef955a33e14bf7b}{Infanterie}}, \mbox{\hyperlink{class_cavalerie_a716e230f0e127442c5d68a0b30af2bed}{Cavalerie}}, \mbox{\hyperlink{class_char_a2f97d4328df2f18585e1d3513b2500ec}{Char}}, and \mbox{\hyperlink{class_force___aerienne_a0bd57a61cf5fb241797da3ebc62e19f9}{Force\+\_\+\+Aerienne}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_soldat_afcd7882dbc493943c86f2f5eef31628b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_soldat_a534012b3c74cbf04fe72f22b8afb2ea3}\label{class_soldat_a534012b3c74cbf04fe72f22b8afb2ea3}} 
+\index{Soldat@{Soldat}!incremId@{incremId}}
+\index{incremId@{incremId}!Soldat@{Soldat}}
+\doxysubsubsection{\texorpdfstring{incremId()}{incremId()}}
+{\footnotesize\ttfamily void Soldat\+::increm\+Id (\begin{DoxyParamCaption}\item[{int}]{pas }\end{DoxyParamCaption})}
+
+
+
+Overlay operation on the soldier\textquotesingle{}s id where the specified step size. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pas} & The new value of the soldier\textquotesingle{}s ID. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_soldat_a08df03206c881e78e880be824607f114}\label{class_soldat_a08df03206c881e78e880be824607f114}} 
+\index{Soldat@{Soldat}!Position\_Tir@{Position\_Tir}}
+\index{Position\_Tir@{Position\_Tir}!Soldat@{Soldat}}
+\doxysubsubsection{\texorpdfstring{Position\_Tir()}{Position\_Tir()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{soldat_8hpp_a522a0f4194aa69fd77cceb80ff615234}{pair}} Soldat\+::\+Position\+\_\+\+Tir (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{soldat_8hpp_a522a0f4194aa69fd77cceb80ff615234}{pair}}}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Attack Location. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & Own position\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+nv\+\_\+position Location of the enemy 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_infanterie_a26882a5d8689f7b8835e6ba7753f3cc4}{Infanterie}}, \mbox{\hyperlink{class_cavalerie_a858469bf6d8c1f192e02220c18404c14}{Cavalerie}}, \mbox{\hyperlink{class_char_aac2afeae08c2cd4bfa9042a863e9f34f}{Char}}, and \mbox{\hyperlink{class_force___aerienne_af7a2f20f66570212767e4cf9427a22f0}{Force\+\_\+\+Aerienne}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_soldat_a08df03206c881e78e880be824607f114_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_soldat_a5ce26faa848dbc6ab21f4a48e4dc94dc}\label{class_soldat_a5ce26faa848dbc6ab21f4a48e4dc94dc}} 
+\index{Soldat@{Soldat}!reduireHp@{reduireHp}}
+\index{reduireHp@{reduireHp}!Soldat@{Soldat}}
+\doxysubsubsection{\texorpdfstring{reduireHp()}{reduireHp()}}
+{\footnotesize\ttfamily void Soldat\+::reduire\+Hp (\begin{DoxyParamCaption}\item[{int}]{tir }\end{DoxyParamCaption})}
+
+
+
+Set the Health points that may be reduced by an attack. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tir} & Possible reduction of health points. \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_soldat_a5ce26faa848dbc6ab21f4a48e4dc94dc_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_soldat_a90f42d2d63085ca342482366820d8686}\label{class_soldat_a90f42d2d63085ca342482366820d8686}} 
+\index{Soldat@{Soldat}!restituer@{restituer}}
+\index{restituer@{restituer}!Soldat@{Soldat}}
+\doxysubsubsection{\texorpdfstring{restituer()}{restituer()}}
+{\footnotesize\ttfamily virtual void Soldat\+::restituer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+After being affected by terrain weather, keep this state to prevent, multiple weather and terrain effects make the attribute stacked. 
+
+
+
+Implemented in \mbox{\hyperlink{class_infanterie_a4bf87717f3f6b33f4eae2433a6889177}{Infanterie}}, \mbox{\hyperlink{class_cavalerie_a4458e0f7042a5de81514ac0ba039349a}{Cavalerie}}, \mbox{\hyperlink{class_char_a3e3f17d43d15e01e2a662e95ebaff3b9}{Char}}, and \mbox{\hyperlink{class_force___aerienne_a70ce54885ee18d7debd7157f70c2f334}{Force\+\_\+\+Aerienne}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_soldat_a90f42d2d63085ca342482366820d8686_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_soldat_a50fb5abb93b411a4e923f33440cd93f2}\label{class_soldat_a50fb5abb93b411a4e923f33440cd93f2}} 
+\index{Soldat@{Soldat}!setHp@{setHp}}
+\index{setHp@{setHp}!Soldat@{Soldat}}
+\doxysubsubsection{\texorpdfstring{setHp()}{setHp()}}
+{\footnotesize\ttfamily void Soldat\+::set\+Hp (\begin{DoxyParamCaption}\item[{int}]{hp }\end{DoxyParamCaption})}
+
+
+
+Set the soldier\textquotesingle{}s HP. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em hp} & The new value of the soldier\textquotesingle{}s HP. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_soldat_a701c7d161c391f806ff9260bb7e1424f}\label{class_soldat_a701c7d161c391f806ff9260bb7e1424f}} 
+\index{Soldat@{Soldat}!setId@{setId}}
+\index{setId@{setId}!Soldat@{Soldat}}
+\doxysubsubsection{\texorpdfstring{setId()}{setId()}}
+{\footnotesize\ttfamily void Soldat\+::set\+Id (\begin{DoxyParamCaption}\item[{int}]{nv\+\_\+id }\end{DoxyParamCaption})}
+
+
+
+Set the soldier\textquotesingle{}s ID. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & The new value of the soldier\textquotesingle{}s ID. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_soldat_a97daea0685c409a94ce94ca9f339c874}\label{class_soldat_a97daea0685c409a94ce94ca9f339c874}} 
+\index{Soldat@{Soldat}!setPrecision@{setPrecision}}
+\index{setPrecision@{setPrecision}!Soldat@{Soldat}}
+\doxysubsubsection{\texorpdfstring{setPrecision()}{setPrecision()}}
+{\footnotesize\ttfamily void Soldat\+::set\+Precision (\begin{DoxyParamCaption}\item[{float}]{precision }\end{DoxyParamCaption})}
+
+
+
+Set the soldier\textquotesingle{}s precision. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em precision} & The new value of the soldier\textquotesingle{}s precision. \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_soldat_a97daea0685c409a94ce94ca9f339c874_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_soldat_ad162b5f88c4eb09a6ff9e3f8c765908c}\label{class_soldat_ad162b5f88c4eb09a6ff9e3f8c765908c}} 
+\index{Soldat@{Soldat}!setSpeed@{setSpeed}}
+\index{setSpeed@{setSpeed}!Soldat@{Soldat}}
+\doxysubsubsection{\texorpdfstring{setSpeed()}{setSpeed()}}
+{\footnotesize\ttfamily void Soldat\+::set\+Speed (\begin{DoxyParamCaption}\item[{int}]{speed }\end{DoxyParamCaption})}
+
+
+
+Set the soldier\textquotesingle{}s speed. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em speed} & The new value of the soldier\textquotesingle{}s speed. \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_soldat_ad162b5f88c4eb09a6ff9e3f8c765908c_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_soldat_afad27639ba674c31e73ccb3ffef2a4af}\label{class_soldat_afad27639ba674c31e73ccb3ffef2a4af}} 
+\index{Soldat@{Soldat}!setStrength@{setStrength}}
+\index{setStrength@{setStrength}!Soldat@{Soldat}}
+\doxysubsubsection{\texorpdfstring{setStrength()}{setStrength()}}
+{\footnotesize\ttfamily void Soldat\+::set\+Strength (\begin{DoxyParamCaption}\item[{int}]{strength }\end{DoxyParamCaption})}
+
+
+
+Set the soldier\textquotesingle{}s strength. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em strength} & The new value of the soldier\textquotesingle{}s strength. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_soldat_aadbfa704cbd962671c7e5a1b958b9954}\label{class_soldat_aadbfa704cbd962671c7e5a1b958b9954}} 
+\index{Soldat@{Soldat}!tirer@{tirer}}
+\index{tirer@{tirer}!Soldat@{Soldat}}
+\doxysubsubsection{\texorpdfstring{tirer()}{tirer()}}
+{\footnotesize\ttfamily int Soldat\+::tirer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Make the soldier shoot and return the damage dealt. 
+
+\begin{DoxyReturn}{Returns}
+The amount of damage dealt, if the shot hits. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_soldat_aadbfa704cbd962671c7e5a1b958b9954_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_soldat_a66b5f72ae75c9ec262d4663246532843}\label{class_soldat_a66b5f72ae75c9ec262d4663246532843}} 
+\index{Soldat@{Soldat}!hp@{hp}}
+\index{hp@{hp}!Soldat@{Soldat}}
+\doxysubsubsection{\texorpdfstring{hp}{hp}}
+{\footnotesize\ttfamily int Soldat\+::hp\hspace{0.3cm}{\ttfamily [protected]}}
+
+The soldier\textquotesingle{}s health points. \mbox{\Hypertarget{class_soldat_a3d2b945764f4b73806d97e4685d047bd}\label{class_soldat_a3d2b945764f4b73806d97e4685d047bd}} 
+\index{Soldat@{Soldat}!id@{id}}
+\index{id@{id}!Soldat@{Soldat}}
+\doxysubsubsection{\texorpdfstring{id}{id}}
+{\footnotesize\ttfamily int Soldat\+::id\hspace{0.3cm}{\ttfamily [protected]}}
+
+The soldier\textquotesingle{}s \`{}\+ID. \mbox{\Hypertarget{class_soldat_a99fedf54129943a37193e5ab4fe59e41}\label{class_soldat_a99fedf54129943a37193e5ab4fe59e41}} 
+\index{Soldat@{Soldat}!precision@{precision}}
+\index{precision@{precision}!Soldat@{Soldat}}
+\doxysubsubsection{\texorpdfstring{precision}{precision}}
+{\footnotesize\ttfamily float Soldat\+::precision\hspace{0.3cm}{\ttfamily [protected]}}
+
+The soldier\textquotesingle{}s shooting precision. \mbox{\Hypertarget{class_soldat_a2bbc328f7a3e6358ec3fc48511adc7e0}\label{class_soldat_a2bbc328f7a3e6358ec3fc48511adc7e0}} 
+\index{Soldat@{Soldat}!speed@{speed}}
+\index{speed@{speed}!Soldat@{Soldat}}
+\doxysubsubsection{\texorpdfstring{speed}{speed}}
+{\footnotesize\ttfamily int Soldat\+::speed\hspace{0.3cm}{\ttfamily [protected]}}
+
+The soldier\textquotesingle{}s movement speed. \mbox{\Hypertarget{class_soldat_a357782e49f3cebb49eac78763c042a99}\label{class_soldat_a357782e49f3cebb49eac78763c042a99}} 
+\index{Soldat@{Soldat}!strength@{strength}}
+\index{strength@{strength}!Soldat@{Soldat}}
+\doxysubsubsection{\texorpdfstring{strength}{strength}}
+{\footnotesize\ttfamily int Soldat\+::strength\hspace{0.3cm}{\ttfamily [protected]}}
+
+The soldier\textquotesingle{}s attack strength. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+War\+\_\+\+Simulation2/\+War\+\_\+\+Simulation/src/\mbox{\hyperlink{soldat_8hpp}{soldat.\+hpp}}\item 
+D\+:/\+War\+\_\+\+Simulation2/\+War\+\_\+\+Simulation/src/\mbox{\hyperlink{soldat_8cpp}{soldat.\+cpp}}\end{DoxyCompactItemize}

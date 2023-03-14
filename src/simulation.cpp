@@ -1,6 +1,27 @@
+/**  @file     simulation.cpp                                                                                                                                
+ * @author     Yassir, Achraf, Xuanzhe                                                                                                        
+ * @version    1.0.0.1                                                
+ * @date       2023.01.31                                                                                
+ * @copyright  Copyright (c)
+ *****************************************************************
+ * @attention
+ * Development environment: Windows
+ * @par Modification log:
+ * <table>
+ * <tr><th>Date        <th>Version  <th>Author    <th>Description
+ * <tr><td>2023/01/31  <td>1.0      <td>Achraf    <td>Creating the initial version(Array and vector selection needs to be discussed)
+ * <tr><td>2023/02/10  <td>2.0      <td>Xuanzhe   <td>modification of cart(impossible d'assigner une valeur de type "Terrain (*)[3]" à une entité de type "Terrain **")(Still need to discuss)
+ * <tr><td>2023/02/20  <td>3.0      <td>Yassir   <td>Problem solving and optimization
+ * </table>
+ ******************************************************************
+ */ 
 #include "simulation.hpp"
 
-
+/**
+ * @brief Constructs a new Simulation object.
+ *
+ * This constructor initializes the armies and the terrain for the simulation.
+ */
 Simulation::Simulation()
 {
     carte = new Terrain *[TAILLE_C];
@@ -52,31 +73,49 @@ Simulation::Simulation()
     }
 }
 
-
+/**
+ * @brief Gets the first army.
+ *
+ * @return The first army.
+ */
 Armee Simulation::getA1()
 {
     return a[0];
 }
 
-
+/**
+ * @brief Gets the second army.
+ *
+ * @return The second army.
+ */
 Armee Simulation::getA2()
 {
     return a[1];
 }
 
-
+/**
+ * @brief Sets the first army.
+ *
+ * @param a1 The new value for the first army.
+ */
 void Simulation::setA1(Armee a)
 {
     this->a[0] = a;
 }
 
-
+/**
+ * @brief Sets the second army.
+ *
+ * @param a2 The new value for the second army.
+ */
 void Simulation::setA2(Armee a)
 {
     this->a[1] = a;
 }
 
-
+/**
+ * @brief Displays the armies in the simulation.
+ */
 void Simulation::AfficherArmees()
 {
     cout << "-> ARMEE 1 :" << endl;
@@ -92,7 +131,10 @@ void Simulation::AfficherArmees()
     }
 }
 
-
+/**
+ * @brief Random distribution of two armies, that is, the initialization of two 
+ * armies on the map. Include the effect of terrain on soldiers' attributes
+ */
 void Simulation::DisperserArmee()
 {
     //initialisation des positions 
@@ -128,7 +170,11 @@ void Simulation::DisperserArmee()
     }
 }
 
-
+/**
+ * @brief Destroys the Simulation object.
+ *
+ * This destructor frees the memory used by the terrain.
+ */
 Simulation::~Simulation()
 {
     //liberer armee
@@ -149,7 +195,10 @@ Simulation::~Simulation()
     delete [] carte;
 }
 
-
+/**
+* @brief Mise à jour de la carte simulée avec les deux armées
+*
+*/
 void Simulation::Progression()
 {
     int taille = TAILLE_C * TAILLE_T;
@@ -164,7 +213,10 @@ void Simulation::Progression()
     }
 }
 
-
+/**
+ * @brief Exportation des conditions météorologiques du terrain de la carte
+ *
+ */
 void Simulation::AfficherCarte()
 {
     int cmpt = 0;
@@ -181,7 +233,12 @@ void Simulation::AfficherCarte()
     }
 }
 
-
+/**
+ * @brief Soldat Mort Effacer Soldat<This function has been replaced with other functions>
+ *
+ * @param sol_mort Objets du soldat mort
+ * 
+ */
 void Simulation::supprimer_soldat(Soldat* sol_mort)
 {
    // int id = sol_mort->getId() / 4;   //recuperer numero de l'armée
@@ -196,7 +253,12 @@ void Simulation::supprimer_soldat(Soldat* sol_mort)
 }
 
 
-
+/**
+ * @brief Simulation of two armies sending war
+ * 
+ * @param pos_soldat_cour The location of the soldier being traversed
+ * 
+ */
 void Simulation::executer_tir(pair pos_soldat_cour)
 {
     int taille = TAILLE_C * TAILLE_T;
@@ -335,7 +397,12 @@ void Simulation::executer_tir(pair pos_soldat_cour)
 
 }
 
-
+/**
+ * @brief The move and attack simulation functions, along with the 
+ * executer_tir(pair pos_soldat_cour) function, are the two main 
+ * functions of this simulation
+ * 
+ */
 void Simulation::episode()
 {
     Soldat * soldat_cour = nullptr;
@@ -383,7 +450,10 @@ void Simulation::episode()
 
 }
 
-
+/**
+ * @brief Exporting army movements and the occurrence of war
+ * 
+ */
 void Simulation::afficher_episode()
 {
     int taille = TAILLE_C * TAILLE_T;
@@ -400,7 +470,10 @@ void Simulation::afficher_episode()
     
 }
 
-
+/**
+ * @brief Simulate each round of war or movement
+ * 
+ */
 void Simulation::simuler(int tour)
 {
     Progression();
@@ -412,10 +485,4 @@ void Simulation::simuler(int tour)
         afficher_episode();
         episode();
     }
-
-
-
-
-
-
 }
