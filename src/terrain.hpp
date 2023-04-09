@@ -36,11 +36,11 @@ public:
     Terrain();
     Topographie getTopographie();
     Meteo getMeteo();
-
     void setTopographie(Topographie );
     void setMeteo(Meteo );
     void AfficherTerrain();
     void InfluenceSoldat( Soldat&  );
+    pair conditions();
 
 };
 

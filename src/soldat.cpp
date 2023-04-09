@@ -61,7 +61,7 @@ void Soldat::setSpeed(int speed)
 int Soldat::tirer()
 {
     int resultat = 0;
-    float random = rand() / (float) RAND_MAX;
+    float random = genrand_real1();
 
     if (random <= precision)
         resultat = strength;
@@ -72,7 +72,7 @@ int Soldat::tirer()
 
 void Soldat::reduireHp(int tir)
 {
-    int random = rand() % 100;
+    int random = genrand_int32() % 100;
     
     if (random >= speed)
         hp -= tir;
@@ -96,7 +96,7 @@ void Soldat::incremId(int pas)
 
 int Soldat::decider() // 0 = tirer, 1 = bouger
 {
-    return rand() % 2;
+    return genrand_int32() % 2;
 }
 
 

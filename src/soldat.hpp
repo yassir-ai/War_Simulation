@@ -6,6 +6,7 @@
 #include <ctime>
 #include <vector>
 #include <utility>
+#include "mt19937ar.h"
 
 using std::cout;
 using std::cin;
@@ -44,18 +45,14 @@ public:
     void incremId(int );
     bool estMort();
     bool est_Ami(Soldat&);
-
     int decider(); // 0 = tirer, 1 = bouger
     int tirer();
     void reduireHp(int );
     virtual void restituer() = 0; 
     virtual pair bouger(pair ) = 0;                        
     virtual pair Position_Tir(pair ) = 0;
-
     virtual void AfficherSoldat() = 0;
     virtual int getType() = 0;
-    
-
     virtual ~Soldat();
 };
 
@@ -71,6 +68,7 @@ public:
     void restituer() override;
     pair bouger(pair ) override;
     pair Position_Tir(pair ) override;
+    ~Infanterie();
 };
 
 class Cavalerie : public Soldat   //1
@@ -85,6 +83,7 @@ public:
     void restituer() override;
     pair bouger(pair ) override;
     pair Position_Tir(pair ) override;
+    ~Cavalerie();
 };
 
 class Char : public Soldat     //2
@@ -99,6 +98,7 @@ public:
     void restituer() override;
     pair bouger(pair ) override;
     pair Position_Tir(pair ) override;
+    ~Char();
 };
 
 class Force_Aerienne : public Soldat    //3
@@ -113,6 +113,7 @@ public:
     void restituer() override;
     pair bouger(pair ) override;
     pair Position_Tir(pair ) override;
+    ~Force_Aerienne();
 };
 
 #endif

@@ -34,8 +34,8 @@ void Force_Aerienne::restituer()
 
 pair Force_Aerienne::bouger(pair position)                // se deplace avec un pas de 5
 {
-    int x = rand() % 3;
-    int y = rand() % 3;
+    int x = genrand_int32() % 3;
+    int y = genrand_int32() % 3;
     x--;
     y--;
     pair nv_position = std::make_pair(position.first + 5*x, position.second + 5*y);
@@ -47,3 +47,6 @@ pair Force_Aerienne::Position_Tir(pair position)   //elle tue 8 personne autour 
 {
     return position;
 }
+
+Force_Aerienne::~Force_Aerienne()
+{}

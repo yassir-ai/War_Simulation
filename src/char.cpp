@@ -33,8 +33,8 @@ void Char::restituer()
 
 pair Char::bouger(pair position)                  // se deplace avec un pas de 2
 { 
-    int x = rand() % 3;
-    int y = rand() % 3;
+    int x = genrand_int32() % 3;
+    int y = genrand_int32() % 3;
     x--;
     y--;
     pair nv_position = std::make_pair(position.first + 2*x, position.second + 2*x);
@@ -45,18 +45,21 @@ pair Char::bouger(pair position)                  // se deplace avec un pas de 2
 pair Char::Position_Tir(pair position)        // il choisit une direction parmi 4 dir, puis elle tue 2 ligne(oucolomnes) de 6 personne
 {
     int x, y;
-    int choix = rand() % 2;
+    int choix = genrand_int32() % 2;
     if (choix) // 1 : x==0
     {
         x = 0;
-        y = (rand()%2)? 1 : -1;
+        y = (genrand_int32() % 2)? 1 : -1;
     }
     else // 0   : y==0 
     {
         y = 0;
-        x = (rand()%2)? 1 : -1;
+        x = (genrand_int32() % 2)? 1 : -1;
     }
     pair nv_position = std::make_pair(position.first + x, position.second + y);
 
     return nv_position;
 }
+
+Char::~Char()
+{}

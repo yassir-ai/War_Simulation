@@ -40,11 +40,8 @@ class Simulation
 private:
 
     Armee a[2];
-
     Terrain** carte;
-
     Soldat * Carte_Guerre[TAILLE_T * TAILLE_C][TAILLE_T * TAILLE_C];
-
     Soldat* carte_etat[TAILLE_T * TAILLE_C][TAILLE_T * TAILLE_C];
 
 public:
@@ -56,27 +53,15 @@ public:
 
     void setA1(Armee );
     void setA2(Armee );
-
     void AfficherArmees();
-
     void DisperserArmee();
-
     void Progression();
-
     void AfficherCarte();
-
-    void supprimer_soldat(Soldat*);   //supprimer un soldat mort de l'armée
-
     void executer_tir(pair);
-
     void episode();
-
     void afficher_episode();
-
     void simuler(int , SDL_Renderer*);
-
     void SDL_display(SDL_Renderer* );
-
     ~Simulation();
 };
 

@@ -2,8 +2,8 @@
 
 Terrain::Terrain()
 {
-    int random_meteo = rand() % 3;
-    int random_topo = rand() % 3;
+    int random_meteo = genrand_int32() % 3;
+    int random_topo = genrand_int32() % 3;
 
     meteo = (Meteo) random_meteo;
     topo = (Topographie) random_topo;
@@ -66,4 +66,7 @@ void Terrain::InfluenceSoldat( Soldat& soldat )
     if (soldat.getType() != Force_Aerienne::type) soldat.setSpeed(nv_speed); // les forces aerienne ne sont pas influence par la topographie (ils volent)
 }
 
-
+pair Terrain::conditions()
+{
+    return std::make_pair(getMeteo(), getTopographie());
+}
