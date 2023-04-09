@@ -1,7 +1,7 @@
 #include "simulation.hpp"
 
 
-Simulation::Simulation()
+Simulation::Simulation() : nombre_mort(0)
 {
     carte = new Terrain *[TAILLE_C];
 
@@ -209,6 +209,8 @@ void Simulation::executer_tir(pair pos_soldat_cour)
                 {
                     cout << ennemi->getId() << " a la position " << i << ", " << j << " sera mort" << " par " << soldat_cour->getId() << " a la position " << pos_soldat_cour.first << ", " << pos_soldat_cour.second << endl;
                     Carte_Guerre[i][j] = nullptr;                                // l'eliminer de la carte de guerre
+                    nombre_mort++;                                               //incrementer le nombre de soldats morts    
+                    carte[i / TAILLE_T][j / TAILLE_T].nb_mort++;
                 }
             }
             
@@ -224,6 +226,8 @@ void Simulation::executer_tir(pair pos_soldat_cour)
                 {
                     cout << ennemi->getId() << " a la position " << i << ", " << j << " sera mort" << " par " << soldat_cour->getId() << " a la position " << pos_soldat_cour.first << ", " << pos_soldat_cour.second  << endl;
                     Carte_Guerre[i][j] = nullptr;  // l'eliminer de la carte de guerre
+                    nombre_mort++;                                               //incrementer le nombre de soldats morts   
+                    carte[i / TAILLE_T][j / TAILLE_T].nb_mort++;
                 }
             }
             
@@ -250,6 +254,8 @@ void Simulation::executer_tir(pair pos_soldat_cour)
                         {
                             cout << carte_etat[ti][tj]->getId() << " a la position " << ti << ", " << tj << " sera mort" << " par " << soldat_cour->getId() << " a la position " << pos_soldat_cour.first << ", " << pos_soldat_cour.second  << endl;
                             Carte_Guerre[ti][tj] = nullptr;  // l'eliminer de la carte de guerre
+                            nombre_mort++;                                               //incrementer le nombre de soldats morts 
+                            carte[ti / TAILLE_T][tj / TAILLE_T].nb_mort++;
                         }
                     }
 
@@ -263,6 +269,8 @@ void Simulation::executer_tir(pair pos_soldat_cour)
                         {
                             cout << carte_etat[ti][tj]->getId() << " a la position " << ti << ", " << tj << " sera mort" << " par " << soldat_cour->getId() << " a la position " << pos_soldat_cour.first << ", " << pos_soldat_cour.second  << endl;
                             Carte_Guerre[ti][tj] = nullptr;  // l'eliminer de la carte de guerre
+                            nombre_mort++;                                               //incrementer le nombre de soldats morts 
+                            carte[ti / TAILLE_T][tj / TAILLE_T].nb_mort++;
                         }
                     }
                 }
@@ -282,6 +290,8 @@ void Simulation::executer_tir(pair pos_soldat_cour)
                         {
                             cout << carte_etat[ti][tj]->getId() << " a la position " << ti << ", " << tj << " sera mort" << " par " << soldat_cour->getId() << " a la position " << pos_soldat_cour.first << ", " << pos_soldat_cour.second  << endl;
                             Carte_Guerre[ti][tj] = nullptr;  // l'eliminer de la carte de guerre
+                            nombre_mort++;                                               //incrementer le nombre de soldats morts 
+                            carte[ti / TAILLE_T][tj / TAILLE_T].nb_mort++;
                         }
                     }
 
@@ -295,6 +305,8 @@ void Simulation::executer_tir(pair pos_soldat_cour)
                         {
                             cout << carte_etat[ti][tj]->getId() << " a la position " << ti << ", " << tj << " sera mort" << " par " << soldat_cour->getId() << " a la position " << pos_soldat_cour.first << ", " << pos_soldat_cour.second  << endl;
                             Carte_Guerre[ti][tj] = nullptr;  // l'eliminer de la carte de guerre
+                            nombre_mort++;                                               //incrementer le nombre de soldats morts 
+                            carte[ti / TAILLE_T][tj / TAILLE_T].nb_mort++;
                         }
                     }
                 }
@@ -318,6 +330,8 @@ void Simulation::executer_tir(pair pos_soldat_cour)
                         {
                             cout << carte_etat[ti][tj]->getId() << " a la position " << ti << ", " << tj << " sera mort" << " par " << soldat_cour->getId() << " a la position " << pos_soldat_cour.first << ", " << pos_soldat_cour.second  << endl;
                             Carte_Guerre[ti][tj] = nullptr;  // l'eliminer de la carte de guerre
+                            nombre_mort++;                                               //incrementer le nombre de soldats morts 
+                            carte[ti / TAILLE_T][tj / TAILLE_T].nb_mort++;
                         }
                     }
                 }
@@ -408,12 +422,13 @@ void Simulation::simuler(int tour, SDL_Renderer* render)
 {
     Progression();
     int tmp = 0;
+    // nombre_mort = 0;   //pour une nouvelle simulation, le compteur est mis à 0
 
     bool play = false;
     bool pause = false;
     SDL_Event event;
 
-    while( !play && tmp<tour)
+    while( !play && tmp < tour)
     {    
         while(SDL_PollEvent(&event))
         {
@@ -441,6 +456,7 @@ void Simulation::simuler(int tour, SDL_Renderer* render)
             episode();
         }
     }
+    cout << "le nombre de mort est : " << getNombreMort() << endl;
 }
 
 
@@ -455,15 +471,15 @@ void Simulation::SDL_display(SDL_Renderer* render)
         {
             cond = carte[i][j].conditions();
 
-            if(cond.first == SOLEIL && cond.second == PLAINE) SDL_SetRenderDrawColor(render, 0, 212, 4, 255);
-            else if(cond.first == SOLEIL && cond.second == FORET) SDL_SetRenderDrawColor(render, 194, 133, 48, 255);
-            else if(cond.first == SOLEIL && cond.second == MONTAGNE) SDL_SetRenderDrawColor(render, 175, 179, 162, 255);
-            else if(cond.first == TEMPETE && cond.second == PLAINE) SDL_SetRenderDrawColor(render, 0, 77, 1, 255);
-            else if(cond.first == TEMPETE && cond.second == FORET) SDL_SetRenderDrawColor(render, 84, 58, 21, 255);
-            else if(cond.first == TEMPETE && cond.second == MONTAGNE) SDL_SetRenderDrawColor(render, 70, 71, 65, 255);
-            else if(cond.first == BROUILLARD && cond.second == PLAINE) SDL_SetRenderDrawColor(render, 0, 135, 2, 255);
-            else if(cond.first == BROUILLARD && cond.second == FORET) SDL_SetRenderDrawColor(render, 120, 83, 30, 255);
-            else SDL_SetRenderDrawColor(render, 112, 115, 104, 255);
+            if(cond.first == SOLEIL && cond.second == PLAINE) SDL_SetRenderDrawColor(render, 0, 212, 4, 255); //0
+            else if(cond.first == SOLEIL && cond.second == FORET) SDL_SetRenderDrawColor(render, 194, 133, 48, 255); //1
+            else if(cond.first == SOLEIL && cond.second == MONTAGNE) SDL_SetRenderDrawColor(render, 175, 179, 162, 255); //2
+            else if(cond.first == TEMPETE && cond.second == PLAINE) SDL_SetRenderDrawColor(render, 0, 77, 1, 255); //3
+            else if(cond.first == TEMPETE && cond.second == FORET) SDL_SetRenderDrawColor(render, 84, 58, 21, 255); //4
+            else if(cond.first == TEMPETE && cond.second == MONTAGNE) SDL_SetRenderDrawColor(render, 70, 71, 65, 255); //5
+            else if(cond.first == BROUILLARD && cond.second == PLAINE) SDL_SetRenderDrawColor(render, 0, 135, 2, 255); //6
+            else if(cond.first == BROUILLARD && cond.second == FORET) SDL_SetRenderDrawColor(render, 120, 83, 30, 255); //7
+            else SDL_SetRenderDrawColor(render, 112, 115, 104, 255); //8
 
             SDL_RenderDrawRect(render, &rectangle);
 			SDL_RenderFillRect(render, &rectangle);
@@ -514,3 +530,9 @@ void Simulation::SDL_display(SDL_Renderer* render)
 
 	SDL_RenderClear(render);
 }
+
+int Simulation::getNombreMort()
+{
+    return nombre_mort;
+}
+

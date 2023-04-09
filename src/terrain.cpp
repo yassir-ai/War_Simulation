@@ -2,6 +2,7 @@
 
 Terrain::Terrain()
 {
+    nb_mort = 0;
     int random_meteo = genrand_int32() % 3;
     int random_topo = genrand_int32() % 3;
 

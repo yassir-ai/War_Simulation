@@ -1,4 +1,4 @@
-#include "simulation.hpp"
+#include "statistique.hpp"
 
 int main(int , char** )
 {
@@ -12,9 +12,10 @@ int main(int , char** )
     SDL_Renderer* renderer = SDL_CreateRenderer(fenetre, -1, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
 
     //Initialisation simulation
-    Simulation s;
-    s.DisperserArmee();
-    s.simuler(100, renderer);
+    Statistique stat(5, 6, renderer);
+    stat.Moyenne_mort_general();
+    stat.nombre_mort_moyen_par_terrain({SOLEIL,PLAINE});
+    stat.nombre_mort_par_terrain_general();
 
     //Liberation
     SDL_DestroyRenderer(renderer);

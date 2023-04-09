@@ -40,11 +40,12 @@ class Simulation
 private:
 
     Armee a[2];
-    Terrain** carte;
     Soldat * Carte_Guerre[TAILLE_T * TAILLE_C][TAILLE_T * TAILLE_C];
     Soldat* carte_etat[TAILLE_T * TAILLE_C][TAILLE_T * TAILLE_C];
+    int nombre_mort;
 
 public:
+    Terrain** carte;
 
     Simulation();
     
@@ -62,6 +63,7 @@ public:
     void afficher_episode();
     void simuler(int , SDL_Renderer*);
     void SDL_display(SDL_Renderer* );
+    int getNombreMort();
     ~Simulation();
 };
 

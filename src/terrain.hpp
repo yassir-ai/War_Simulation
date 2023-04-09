@@ -32,6 +32,7 @@ protected:
 
 public:
 
+    int nb_mort;
     Soldat * matrice[TAILLE_T][TAILLE_T];
     Terrain();
     Topographie getTopographie();
