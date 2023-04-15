@@ -33,16 +33,17 @@ void Char::restituer()
 
 pair Char::bouger(pair position)                  // se deplace avec un pas de 2
 { 
+    //choisir une direction parmi les 9 possibles (position actuelle incluse)
     int x = genrand_int32() % 3;
     int y = genrand_int32() % 3;
     x--;
     y--;
-    pair nv_position = std::make_pair(position.first + 2*x, position.second + 2*x);
+    pair nv_position = std::make_pair(position.first + 2*x, position.second + 2*y);
 
     return nv_position;
 }
 
-pair Char::Position_Tir(pair position)        // il choisit une direction parmi 4 dir, puis elle tue 2 ligne(oucolomnes) de 6 personne
+pair Char::Position_Tir(pair position)        // il choisit une direction parmi 4 dir, puis elle tue 2 ligne(ou colomnes) de 6 personne
 {
     int x, y;
     int choix = genrand_int32() % 2;

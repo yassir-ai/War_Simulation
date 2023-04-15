@@ -34,6 +34,7 @@ void Infanterie::restituer()
 
 pair Infanterie::bouger(pair position)   // se deplace avec un pas de 1
 {
+    //choisir une direction parmi les 9 possibles (position actuelle incluse)
     int x = genrand_int32() % 3;
     int y = genrand_int32() % 3;
     x--;
@@ -50,7 +51,7 @@ pair Infanterie::Position_Tir(pair position)           // elle tue un seul solda
     x--;
     y--;
     pair nv_position = std::make_pair(position.first + x, position.second + y);
-
+    
     return nv_position;
 }
 

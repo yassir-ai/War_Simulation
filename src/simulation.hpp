@@ -8,12 +8,12 @@
 #include "terrain.hpp"
 #include <SDL2/SDL.h>
 
-const int TAILLE_A = 162;                //taille armee
-const int TAILLE_C = 3;                 //racine de taille de la carte
-const int N_INFA = 80;
-const int N_CAVA = 42;
-const int N_CHAR = 30;
-const int N_AERI = 10;
+// const int TAILLE_A = 162;                //taille armee
+// const int TAILLE_C = 3;                 //racine de taille de la carte
+// const int N_INFA = 80;
+// const int N_CAVA = 42;
+// const int N_CHAR = 30;
+// const int N_AERI = 10;
 
 #define BLE     "\x1b[44m"
 #define INIT    "\x1b[0m"
@@ -22,12 +22,12 @@ const int N_AERI = 10;
 
 
 
-// const int TAILLE_A = 20;                //taille armee
-// const int TAILLE_C = 3;                 //racine de taille de la carte
-// const int N_INFA = 10;
-// const int N_CAVA = 5;
-// const int N_CHAR = 2;
-// const int N_AERI = 3;
+const int TAILLE_A = 20;                //taille armee
+const int TAILLE_C = 3;                 //racine de taille de la carte
+const int N_INFA = 10;
+const int N_CAVA = 5;
+const int N_CHAR = 2;
+const int N_AERI = 3;
 
 using std::cout;
 using std::endl;
@@ -42,7 +42,8 @@ private:
     Armee a[2];
     Soldat * Carte_Guerre[TAILLE_T * TAILLE_C][TAILLE_T * TAILLE_C];
     Soldat* carte_etat[TAILLE_T * TAILLE_C][TAILLE_T * TAILLE_C];
-    int nombre_mort;
+    int nombre_mort1;
+    int nombre_mort2;
 
 public:
     Terrain** carte;
@@ -63,7 +64,8 @@ public:
     void afficher_episode();
     void simuler(int , SDL_Renderer*);
     void SDL_display(SDL_Renderer* );
-    int getNombreMort();
+    int getNombreMort(int numero_armee = 2);
+    void incrementer_mort(int);
     ~Simulation();
 };
 

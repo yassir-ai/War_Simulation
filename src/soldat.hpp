@@ -25,7 +25,7 @@ protected:
     int strength;                   //force
     float precision;
     int speed;
-    int id;
+    int id;   
 
 public:
 

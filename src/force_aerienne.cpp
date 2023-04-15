@@ -34,6 +34,7 @@ void Force_Aerienne::restituer()
 
 pair Force_Aerienne::bouger(pair position)                // se deplace avec un pas de 5
 {
+    //choisir une direction parmi les 9 possibles (position actuelle incluse)
     int x = genrand_int32() % 3;
     int y = genrand_int32() % 3;
     x--;

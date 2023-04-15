@@ -35,11 +35,12 @@ void Cavalerie::restituer()
 
 pair Cavalerie::bouger(pair position)           // se deplace avec un pas de 3
 {
+    //choisir une direction parmi les 9 possibles (position actuelle incluse)
     int x = genrand_int32() % 3;
     int y = genrand_int32() % 3;
     x--;
     y--;
-    pair nv_position = std::make_pair(position.first + 3*x, position.second + 3*x);
+    pair nv_position = std::make_pair(position.first + 3*x, position.second + 3*y);
 
     return nv_position;
 }
