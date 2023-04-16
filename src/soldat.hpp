@@ -6,6 +6,7 @@
 #include <ctime>
 #include <vector>
 #include <utility>
+#include <set>
 #include "mt19937ar.h"
 
 using std::cout;
@@ -30,6 +31,8 @@ protected:
 public:
 
     Soldat();
+
+    pair coordonne_soldat;
 
     int getHp();
     int getStrength();

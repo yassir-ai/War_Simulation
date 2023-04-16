@@ -40,6 +40,9 @@ pair Char::bouger(pair position)                  // se deplace avec un pas de 2
     y--;
     pair nv_position = std::make_pair(position.first + 2*x, position.second + 2*y);
 
+    //MAJ des coord de notre soldat
+    this->coordonne_soldat = nv_position;
+
     return nv_position;
 }
 
@@ -58,6 +61,7 @@ pair Char::Position_Tir(pair position)        // il choisit une direction parmi 
         x = (genrand_int32() % 2)? 1 : -1;
     }
     pair nv_position = std::make_pair(position.first + x, position.second + y);
+    
 
     return nv_position;
 }

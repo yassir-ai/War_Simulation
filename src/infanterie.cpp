@@ -41,6 +41,9 @@ pair Infanterie::bouger(pair position)   // se deplace avec un pas de 1
     y--;
     pair nv_position = std::make_pair(position.first + x, position.second + y);
 
+     //MAJ des coord de notre soldat
+    this->coordonne_soldat = nv_position;
+
     return nv_position;
 }
 

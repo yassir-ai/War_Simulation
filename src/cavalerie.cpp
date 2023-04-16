@@ -42,6 +42,9 @@ pair Cavalerie::bouger(pair position)           // se deplace avec un pas de 3
     y--;
     pair nv_position = std::make_pair(position.first + 3*x, position.second + 3*y);
 
+    //MAJ des coord de notre soldat
+    this->coordonne_soldat = nv_position;
+
     return nv_position;
 }
 
