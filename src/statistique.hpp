@@ -17,7 +17,6 @@ public:
     double Moyenne_mort_general();
     double nombre_mort_moyen_par_terrain(pair);
     double * nombre_mort_par_terrain_general();
-    ~Statistique();
 };
 
 #endif

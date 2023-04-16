@@ -32,7 +32,6 @@ public:
 
     Soldat();
 
-    pair coordonne_soldat;
 
     int getHp();
     int getStrength();

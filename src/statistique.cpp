@@ -19,7 +19,10 @@ double Statistique::Moyenne_mort_general()
  
     for (int i = 0; i < nombre_simulation; i++)
     {
+        cout<< i << " " << tableau[i].getNombreMort() << endl;
         moyenne += tableau[i].getNombreMort();
+
+        cout<<"---------------------------------------"<<endl;
     }
 
     moyenne /= (double) nombre_simulation;
@@ -66,11 +69,6 @@ double * Statistique::nombre_mort_par_terrain_general()
     }
     
     return *tab;
-}
-
-Statistique::~Statistique()
-{
-    delete [] tableau;
 }
 
 

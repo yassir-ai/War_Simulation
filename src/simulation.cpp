@@ -119,7 +119,6 @@ void Simulation::DisperserArmee()
             }
             carte[i/TAILLE_T][j/TAILLE_T].matrice[i%TAILLE_T][j%TAILLE_T] = a[k][compteur];         // soldat *
             carte[i/TAILLE_T][j/TAILLE_T].InfluenceSoldat( *a[k][compteur] );                       // influence du terrain (meteo et topographie)
-            a[k][compteur]->coordonne_soldat = {i, j};
             Carte_Guerre[i][j] = a[k][compteur];                                                    // placer le soldat dans la carte de guerre
             compteur++;        
             occupe[i][j] = true;
@@ -206,7 +205,6 @@ void Simulation::executer_tir(pair pos_soldat_cour)
     Soldat * ennemi =  carte_etat[i][j];                               //recuperer l'ennemi à cet position (peut etre null)
     int di, dj;
     int ti, tj;
-    pair coord_soldat;
 
     switch (type)
     {
@@ -218,10 +216,8 @@ void Simulation::executer_tir(pair pos_soldat_cour)
                 //virifier s'il est mort 
                 if (ennemi->estMort())
                 {
-                    coord_soldat = ennemi->coordonne_soldat;
-                    cout << ennemi->getId() << " a la position " << i << ", " << j << " sera mort" << " par " << soldat_cour->getId() << " a la position " << pos_soldat_cour.first << ", " << pos_soldat_cour.second << endl;
-                    Carte_Guerre[coord_soldat.first][coord_soldat.second] = nullptr;                                // l'eliminer de la carte de guerre
-                    ennemi->coordonne_soldat = {-1, -1};
+                    //cout << ennemi->getId() << " a la position " << i << ", " << j << " sera mort" << " par " << soldat_cour->getId() << " a la position " << pos_soldat_cour.first << ", " << pos_soldat_cour.second << endl;
+                    Carte_Guerre[i][j] = nullptr;                                // l'eliminer de la carte de guerre
                     incrementer_mort(ennemi);                                             //incrementer le nombre de soldats morts    
                     carte[i / TAILLE_T][j / TAILLE_T].nb_mort++;
                 }
@@ -237,10 +233,8 @@ void Simulation::executer_tir(pair pos_soldat_cour)
                 //virifier s'il est mort 
                 if (ennemi->estMort())
                 {
-                    coord_soldat = ennemi->coordonne_soldat;
-                    cout << ennemi->getId() << " a la position " << i << ", " << j << " sera mort" << " par " << soldat_cour->getId() << " a la position " << pos_soldat_cour.first << ", " << pos_soldat_cour.second  << endl;
-                    Carte_Guerre[coord_soldat.first][coord_soldat.second] = nullptr;  // l'eliminer de la carte de guerre
-                    ennemi->coordonne_soldat = {-1, -1};
+                   // cout << ennemi->getId() << " a la position " << i << ", " << j << " sera mort" << " par " << soldat_cour->getId() << " a la position " << pos_soldat_cour.first << ", " << pos_soldat_cour.second  << endl;
+                    Carte_Guerre[i][j] = nullptr;  // l'eliminer de la carte de guerre
                     incrementer_mort(ennemi);                                                  //incrementer le nombre de soldats morts   
                     carte[i / TAILLE_T][j / TAILLE_T].nb_mort++;
                 }
@@ -267,10 +261,8 @@ void Simulation::executer_tir(pair pos_soldat_cour)
                         //virifier s'il est mort 
                         if (carte_etat[ti][tj]->estMort())
                         {
-                            coord_soldat = carte_etat[ti][tj]->coordonne_soldat;
-                            cout << carte_etat[ti][tj]->getId() << " a la position " << ti << ", " << tj << " sera mort" << " par " << soldat_cour->getId() << " a la position " << pos_soldat_cour.first << ", " << pos_soldat_cour.second  << endl;
-                             Carte_Guerre[coord_soldat.first][coord_soldat.second] = nullptr;  // l'eliminer de la carte de guerre
-                            carte_etat[ti][tj]->coordonne_soldat = {-1, -1};
+                           // cout << carte_etat[ti][tj]->getId() << " a la position " << ti << ", " << tj << " sera mort" << " par " << soldat_cour->getId() << " a la position " << pos_soldat_cour.first << ", " << pos_soldat_cour.second  << endl;
+                             Carte_Guerre[ti][tj] = nullptr;  // l'eliminer de la carte de guerre
                             incrementer_mort( carte_etat[ti][tj]);                                                 //incrementer le nombre de soldats morts 
                             carte[ti / TAILLE_T][tj / TAILLE_T].nb_mort++;
                         }
@@ -284,10 +276,8 @@ void Simulation::executer_tir(pair pos_soldat_cour)
 
                         if (carte_etat[ti][tj]->estMort())
                         {
-                            coord_soldat = carte_etat[ti][tj]->coordonne_soldat;
-                            cout << carte_etat[ti][tj]->getId() << " a la position " << ti << ", " << tj << " sera mort" << " par " << soldat_cour->getId() << " a la position " << pos_soldat_cour.first << ", " << pos_soldat_cour.second  << endl;
-                            Carte_Guerre[coord_soldat.first][coord_soldat.second] = nullptr;             // l'eliminer de la carte de guerre
-                            carte_etat[ti][tj]->coordonne_soldat = {-1, -1};
+                         //   cout << carte_etat[ti][tj]->getId() << " a la position " << ti << ", " << tj << " sera mort" << " par " << soldat_cour->getId() << " a la position " << pos_soldat_cour.first << ", " << pos_soldat_cour.second  << endl;
+                            Carte_Guerre[ti][tj] = nullptr;             // l'eliminer de la carte de guerre
                             incrementer_mort(carte_etat[ti][tj]);                                                //incrementer le nombre de soldats morts 
                             carte[ti / TAILLE_T][tj / TAILLE_T].nb_mort++;
                         }
@@ -307,10 +297,8 @@ void Simulation::executer_tir(pair pos_soldat_cour)
 
                         if (carte_etat[ti][tj]->estMort())
                         {
-                             coord_soldat = carte_etat[ti][tj]->coordonne_soldat;
-                            cout << carte_etat[ti][tj]->getId() << " a la position " << ti << ", " << tj << " sera mort" << " par " << soldat_cour->getId() << " a la position " << pos_soldat_cour.first << ", " << pos_soldat_cour.second  << endl;
-                             Carte_Guerre[coord_soldat.first][coord_soldat.second] = nullptr;                        // l'eliminer de la carte de guerre
-                            carte_etat[ti][tj]->coordonne_soldat = {-1, -1};
+                           // cout << carte_etat[ti][tj]->getId() << " a la position " << ti << ", " << tj << " sera mort" << " par " << soldat_cour->getId() << " a la position " << pos_soldat_cour.first << ", " << pos_soldat_cour.second  << endl;
+                             Carte_Guerre[ti][tj] = nullptr;                        // l'eliminer de la carte de guerre
                             incrementer_mort( carte_etat[ti][tj] );                                               //incrementer le nombre de soldats morts 
                             carte[ti / TAILLE_T][tj / TAILLE_T].nb_mort++;
                         }
@@ -324,10 +312,8 @@ void Simulation::executer_tir(pair pos_soldat_cour)
 
                         if (carte_etat[ti][tj]->estMort())
                         {
-                            coord_soldat = carte_etat[ti][tj]->coordonne_soldat;
-                            cout << carte_etat[ti][tj]->getId() << " a la position " << ti << ", " << tj << " sera mort" << " par " << soldat_cour->getId() << " a la position " << pos_soldat_cour.first << ", " << pos_soldat_cour.second  << endl;
-                            Carte_Guerre[coord_soldat.first][coord_soldat.second] = nullptr;                                    // l'eliminer de la carte de guerre
-                            carte_etat[ti][tj]->coordonne_soldat = {-1, -1};
+                          //  cout << carte_etat[ti][tj]->getId() << " a la position " << ti << ", " << tj << " sera mort" << " par " << soldat_cour->getId() << " a la position " << pos_soldat_cour.first << ", " << pos_soldat_cour.second  << endl;
+                            Carte_Guerre[ti][tj] = nullptr;                                    // l'eliminer de la carte de guerre
                             incrementer_mort( carte_etat[ti][tj] );                                                              //incrementer le nombre de soldats morts 
                             carte[ti / TAILLE_T][tj / TAILLE_T].nb_mort++;
                         }
@@ -351,10 +337,8 @@ void Simulation::executer_tir(pair pos_soldat_cour)
 
                         if (carte_etat[ti][tj]->estMort())
                         {
-                             coord_soldat = carte_etat[ti][tj]->coordonne_soldat;
-                            cout << carte_etat[ti][tj]->getId() << " a la position " << ti << ", " << tj << " sera mort" << " par " << soldat_cour->getId() << " a la position " << pos_soldat_cour.first << ", " << pos_soldat_cour.second  << endl;
-                            Carte_Guerre[coord_soldat.first][coord_soldat.second] = nullptr;                     // l'eliminer de la carte de guerre
-                            carte_etat[ti][tj]->coordonne_soldat = {-1, -1};
+                           // cout << carte_etat[ti][tj]->getId() << " a la position " << ti << ", " << tj << " sera mort" << " par " << soldat_cour->getId() << " a la position " << pos_soldat_cour.first << ", " << pos_soldat_cour.second  << endl;
+                            Carte_Guerre[ti][tj] = nullptr;                     // l'eliminer de la carte de guerre
                             incrementer_mort( carte_etat[ti][tj] );                                                //incrementer le nombre de soldats morts 
                             carte[ti / TAILLE_T][tj / TAILLE_T].nb_mort++;
                         }
@@ -453,7 +437,7 @@ void Simulation::simuler(int tour, SDL_Renderer* render)
     bool pause = false;
     SDL_Event event;
 
-    while( !play && tmp < tour && (getNombreMort(0) != TAILLE_A  || getNombreMort(1) != TAILLE_A || getNombreMort(2) != 2*TAILLE_A))
+    while( !play && tmp < tour && (getNombreMort(0) != TAILLE_A  || getNombreMort(1) != TAILLE_A -2 || getNombreMort(2) != 2*TAILLE_A))
     {    
         while(SDL_PollEvent(&event))
         {
@@ -475,16 +459,16 @@ void Simulation::simuler(int tour, SDL_Renderer* render)
 
         if (!pause && !play)
         {
-            cout << " le nombre de mort de la premiere armée jusqu à mntn est : " << getNombreMort(0) << endl;
-            cout << " le nombre de mort de la deuxième armée jusqu à mntn est : " << getNombreMort(1) << endl;
-            cout << "TOUR " << tmp++ << endl;
-            afficher_episode();
+            // cout << " le nombre de mort de la premiere armée jusqu à mntn est : " << getNombreMort(0) << endl;
+            // cout << " le nombre de mort de la deuxième armée jusqu à mntn est : " << getNombreMort(1) << endl;
+           // cout << "TOUR " << tmp++ << endl;
+           // afficher_episode();
             SDL_display(render);
             episode();
         }
 
     }
-    cout << "le nombre de mort est : " << getNombreMort() << endl;
+   // cout << "le nombre de mort est : " << getNombreMort() << endl;
 }
 
 

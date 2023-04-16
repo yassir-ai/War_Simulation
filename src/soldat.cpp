@@ -3,9 +3,7 @@
 
 
 Soldat::Soldat() 
-{
-    coordonne_soldat = {-1,-1};
-}
+{}
 
 int Soldat::getHp()
 {
