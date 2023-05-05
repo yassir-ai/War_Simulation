@@ -2,7 +2,7 @@
 
 Ce projet a pour but de simuler une bataille entre deux armées. Il utilise une carte avec une topographie variée et une météo changeante pour ajouter de la complexité à la simulation. Les armées sont représentées par des soldats qui peuvent se déplacer et attaquer les soldats ennemis.
 
-#Fonctionnalités
+##Fonctionnalités
 
 Le projet comprend les fonctionnalités suivantes :
 
@@ -10,7 +10,7 @@ Simulation d'une bataille entre deux armées avec des soldats qui se déplacent 
 Carte générée aléatoirement avec des caractéristiques de topographie et de météo variables
 Interface graphique pour visualiser la simulation en temps réel
 
-#Utilisation
+###Utilisation
 
 Pour utiliser ce projet, vous devez compiler le code source à l'aide d'un compilateur C++ et exécuter l'application générée. L'interface graphique s'affiche alors et vous pouvez observer la simulation de la bataille.
 
