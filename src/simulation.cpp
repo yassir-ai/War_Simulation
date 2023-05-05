@@ -437,7 +437,7 @@ void Simulation::simuler(int tour, SDL_Renderer* render)
     bool pause = false;
     SDL_Event event;
 
-    while( !play && tmp < tour && (getNombreMort(0) != TAILLE_A  || getNombreMort(1) != TAILLE_A -2 || getNombreMort(2) != 2*TAILLE_A))
+    while( !play && tmp < tour && (getNombreMort(0) != TAILLE_A  || getNombreMort(1) != TAILLE_A -2 || getNombreMort(2) != 2*TAILLE_A - 2 ))
     {    
         while(SDL_PollEvent(&event))
         {
@@ -461,8 +461,8 @@ void Simulation::simuler(int tour, SDL_Renderer* render)
         {
             // cout << " le nombre de mort de la premiere armée jusqu à mntn est : " << getNombreMort(0) << endl;
             // cout << " le nombre de mort de la deuxième armée jusqu à mntn est : " << getNombreMort(1) << endl;
-           // cout << "TOUR " << tmp++ << endl;
-           // afficher_episode();
+            cout << "TOUR " << tmp++ << endl;
+            afficher_episode();
             SDL_display(render);
             episode();
         }
